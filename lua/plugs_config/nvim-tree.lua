@@ -5,7 +5,7 @@ if not status then
 end
 
 -- 列表操作快捷键
-local list_keys = require('lua.keybindings').nvimTreeList
+local list_keys = require('keybindings').nvimTreeList
 nvim_tree.setup({
     on_attach = list_keys,
     -- 完全禁止内置netrw
@@ -22,7 +22,7 @@ nvim_tree.setup({
     },
     view = {
         -- 宽度
-        width = 34,
+        width = 40,
         -- 也可以 'right'
         side = "left",
         -- 隐藏根目录
@@ -34,7 +34,7 @@ nvim_tree.setup({
         --     list = list_keys
         -- },
         -- 不显示行数
-        number = true,
+        number = false,
         relativenumber = false,
         -- 显示图标
         signcolumn = "yes"
@@ -44,7 +44,7 @@ nvim_tree.setup({
             -- 首次打开大小适配
             resize_window = true,
             -- 打开文件时关闭 tree
-            quit_on_open = false
+            quit_on_open = true
         }
     }
 })
