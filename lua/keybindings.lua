@@ -60,6 +60,22 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 local PluginKeys = {}
+-- 注释插件快捷键配置
+PluginKeys.comment = {
+  toggler = {
+    line = "gcc", -- 行注释
+    block = "gbc", -- 块注释
+  },
+  -- Visual 模式
+  opleader = {
+    line = "gc",
+    bock = "gb",
+  },
+}
+-- ctrl + /
+map("n", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gcc", { noremap = false })
+
 -- lsp 回调函数快捷键设置
 PluginKeys.mapLSP = function(mapbuf)
   -- rename

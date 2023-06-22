@@ -4,6 +4,10 @@ packer.startup({
         -- Packer 可以升级自己
         use("wbthomason/packer.nvim")
         -------------------------- plugins -------------------------------------------
+        --leap
+        use({
+          "ggandor/leap.nvim"
+        })
         -- nvim-tree
         use({
             "kyazdani42/nvim-tree.lua",
@@ -102,10 +106,10 @@ packer.startup({
         -- use({"akinsho/toggleterm.nvim"})
         -- -- surround
         -- use("ur4ltz/surround.nvim")
-        -- -- Comment
-        -- use("numToStr/Comment.nvim")
-        -- -- nvim-autopairs
-        -- use("windwp/nvim-autopairs")
+        -- Comment
+        use("numToStr/Comment.nvim")
+        -- nvim-autopairs
+        use("windwp/nvim-autopairs")
         -- -- git
         -- use({"lewis6991/gitsigns.nvim"})
         -- -- vimspector

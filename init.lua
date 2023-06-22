@@ -21,5 +21,8 @@ require('plugs_config.nvim-treesitter')
 require('lsp.setup')
 -- 补全引擎
 require('lsp.cmp')
-
+-- 注释插件
+require('plugs_config.comment')
+-- 快速移动插件
+require('plugs_config.leap')
 print("init ok")
