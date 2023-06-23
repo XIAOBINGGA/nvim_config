@@ -29,13 +29,13 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- windows 分屏快捷键
 ------------------------------------------------------------------
 -- 取消 s 默认功能
-map("n", "s", "", opt)
-map("n", "sv", ":vsp<CR>", opt)
-map("n", "sh", ":sp<CR>", opt)
+-- map("n", "s", "", opt)
+-- map("n", "sv", ":vsp<CR>", opt)
+-- map("n", "sh", ":sp<CR>", opt)
 -- 关闭当前
-map("n", "sc", "<C-w>c", opt)
+-- map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
-map("n", "so", "<C-w>o", opt) -- close others
+-- map("n", "so", "<C-w>o", opt) -- close others
 -- alt + hjkl  窗口之间跳转
 map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
@@ -49,17 +49,41 @@ map("n", "<leader>l", "<C-w>l", opt)
 -- 左右比例控制
 map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
-map("n", "s,", ":vertical resize -10<CR>", opt)
-map("n", "s.", ":vertical resize +10<CR>", opt)
+-- map("n", "s,", ":vertical resize -10<CR>", opt)
+-- map("n", "s.", ":vertical resize +10<CR>", opt)
 -- 上下比例
-map("n", "sj", ":resize +10<CR>", opt)
-map("n", "sk", ":resize -10<CR>", opt)
+-- map("n", "sj", ":resize +10<CR>", opt)
+-- map("n", "sk", ":resize -10<CR>", opt)
 map("n", "<C-Down>", ":resize +2<CR>", opt)
 map("n", "<C-Up>", ":resize -2<CR>", opt)
 -- 相等比例
-map("n", "s=", "<C-w>=", opt)
+-- map("n", "s=", "<C-w>=", opt)
 
 local PluginKeys = {}
+-- nvim-cmp 自动补全快捷键
+PluginKeys.cmp = function(cmp)
+    return {
+        -- 出现补全
+        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        -- 取消
+        ["<A-,>"] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close()
+        }),
+        -- 上一个
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        -- 下一个
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        -- 确认
+        ["<CR>"] = cmp.mapping.confirm({
+            select = true,
+            behavior = cmp.ConfirmBehavior.Replace
+        }),
+        -- 如果窗口内容太多，可以滚动
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+    }
+end
 -- 注释插件快捷键配置
 PluginKeys.comment = {
   toggler = {
@@ -100,7 +124,7 @@ PluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
   Lspsaga 替换 gh
   --]]
-  mapuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
   --[[
   Lspsaga 替换 gr
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
@@ -116,7 +140,7 @@ PluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
   mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)

@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -104,10 +109,25 @@ _G.packer_plugins = {
     path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "C:\\Users\\xiaob\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,

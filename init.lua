@@ -21,8 +21,14 @@ require('plugs_config.nvim-treesitter')
 require('lsp.setup')
 -- 补全引擎
 require('lsp.cmp')
+--- null-ls 
+require('lsp.null-ls')
 -- 注释插件
 require('plugs_config.comment')
 -- 快速移动插件
 require('plugs_config.leap')
+-- surround 插件
+require('plugs_config.surround')
+-- 括号自动补全插件
+require('plugs_config.autopairs')
 print("init ok")

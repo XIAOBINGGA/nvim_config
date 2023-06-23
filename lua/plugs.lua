@@ -46,7 +46,8 @@ packer.startup({
         -- use("p00f/nvim-ts-rainbow")
         -- -- indent-blankline
         -- use("lukas-reineke/indent-blankline.nvim")
-        -- --------------------- LSP --------------------
+        --------------------- LSP --------------------
+        use({"jose-elias-alvarez/null-ls.nvim"})
         use({"williamboman/nvim-lsp-installer"})
         -- Lspconfig
         use({"neovim/nvim-lspconfig"})
@@ -104,8 +105,8 @@ packer.startup({
 
         -- -------------------------------------------------------
         -- use({"akinsho/toggleterm.nvim"})
-        -- -- surround
-        -- use("ur4ltz/surround.nvim")
+        -- surround
+        use("kylechui/nvim-surround")
         -- Comment
         use("numToStr/Comment.nvim")
         -- nvim-autopairs
