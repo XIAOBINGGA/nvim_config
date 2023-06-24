@@ -9,6 +9,9 @@ local opt = {
 -- 本地变量
 local map = vim.api.nvim_set_keymap
 
+map("n", "<leader>bn", ':bp<CR>', opt)
+map("n", '<leader>bp', ':bn<CR>', opt)
+
 map("i", "jj", "<Esc>", opt)
 -- ; : 互换
 map("n", ";", ":", opt)

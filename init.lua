@@ -17,7 +17,7 @@ require('plugs_config.nvim-tree')
 -- treeitter
 require('plugs_config.nvim-treesitter')
 -- which-key
-require('lua.plugs_config.which-key')
+require('plugs_config.which-key')
 -- lsp 配置
 require('lsp.setup')
 -- 补全引擎

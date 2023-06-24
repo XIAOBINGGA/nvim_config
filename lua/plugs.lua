@@ -104,6 +104,8 @@ packer.startup({
         -- use("EdenEast/nightfox.nvim")
 
         -- -------------------------------------------------------
+        -- 添加Rescript
+        -- use ('nkrkv/nvim-treesitter-rescript')
         -- use({"akinsho/toggleterm.nvim"})
         -- surround
         use("kylechui/nvim-surround")
