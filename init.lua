@@ -16,11 +16,14 @@ require('plugs_config.project')
 require('plugs_config.nvim-tree')
 -- treeitter
 require('plugs_config.nvim-treesitter')
-
+-- which-key
+require('lua.plugs_config.which-key')
 -- lsp 配置
 require('lsp.setup')
 -- 补全引擎
 require('lsp.cmp')
+-- lsp ui 增强
+require('lsp.ui')
 --- null-ls 
 require('lsp.null-ls')
 -- 注释插件
@@ -31,4 +34,4 @@ require('plugs_config.leap')
 require('plugs_config.surround')
 -- 括号自动补全插件
 require('plugs_config.autopairs')
-print("init ok")
+-- print("init ok")

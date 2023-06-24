@@ -4,17 +4,17 @@ packer.startup({
         -- Packer 可以升级自己
         use("wbthomason/packer.nvim")
         -------------------------- plugins -------------------------------------------
-        --leap
-        use({
-          "ggandor/leap.nvim"
-        })
+        -- which-key
+        use({"folke/which-key.nvim"})
+        -- leap
+        use({"ggandor/leap.nvim"})
         -- nvim-tree
         use({
             "kyazdani42/nvim-tree.lua",
             requires = "kyazdani42/nvim-web-devicons"
         })
         -- 主题
-        use({ "navarasu/onedark.nvim" })
+        use({"navarasu/onedark.nvim"})
         -- bufferline
         -- use({
         --     "akinsho/bufferline.nvim",
@@ -23,12 +23,12 @@ packer.startup({
         -- lualine
         use({
             "nvim-lualine/lualine.nvim",
-            requires = { "kyazdani42/nvim-web-devicons" }
+            requires = {"kyazdani42/nvim-web-devicons"}
         })
         -- telescope
         use({
             'nvim-telescope/telescope.nvim',
-            requires = { { 'nvim-lua/plenary.nvim' } }
+            requires = {{'nvim-lua/plenary.nvim'}}
         })
         -- use("arkav/lualine-lsp-progress")
         -- -- telescope extensions
@@ -40,7 +40,7 @@ packer.startup({
         use("ahmedkhalf/project.nvim")
         -- treesitter
         use({
-           "nvim-treesitter/nvim-treesitter",
+            "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate"
         })
         -- use("p00f/nvim-ts-rainbow")
@@ -64,9 +64,9 @@ packer.startup({
         -- use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
         -- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
-        -- -- UI 增强
+        -- UI 增强
         -- use("onsails/lspkind-nvim")
-        -- use("tami5/lspsaga.nvim")
+        use("glepnir/lspsaga.nvim")
         -- -- 代码格式化
         -- use("mhartington/formatter.nvim")
         -- use({
