@@ -109,6 +109,7 @@ map("v", "<C-_>", "gcc", {
 
 -- lsp 回调函数快捷键设置
 PluginKeys.mapLSP = function(mapbuf)
+    vim.notify("bingkey")
     -- rename
     mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
     -- 格式化数据
