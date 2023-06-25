@@ -32,7 +32,7 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 命令行高为2，提供足够的显示空间
@@ -45,7 +45,7 @@ vim.wo.wrap = false
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 vim.o.whichwrap = '<,>,[,]'
 -- 允许隐藏被修改过的buffer
-vim.o.hidden = true
+vim.o.hidden = false
 -- 鼠标支持
 vim.o.mouse = "a"
 -- 禁止创建备份文件
@@ -66,7 +66,7 @@ vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.list = true
+vim.o.list = false
 vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true

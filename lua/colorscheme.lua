@@ -14,6 +14,6 @@ if not status then
 end
 -- Lua
 themes.setup({
-  style = 'warmer'
+  style = 'dark'
 })
 themes.load()

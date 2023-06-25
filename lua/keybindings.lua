@@ -62,7 +62,6 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 -- 相等比例
 -- map("n", "s=", "<C-w>=", opt)
 -- 格式化操作
-map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
 local PluginKeys = {}
 -- nvim-cmp 自动补全快捷键
 PluginKeys.cmp = function(cmp)
@@ -112,6 +111,8 @@ map("v", "<C-_>", "gcc", {
 PluginKeys.mapLSP = function(mapbuf)
     -- rename
     mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+    -- 格式化数据
+    mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
 end
 -- telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
