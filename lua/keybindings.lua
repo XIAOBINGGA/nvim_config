@@ -142,6 +142,18 @@ PluginKeys.mapLSP = function(mapbuf)
     mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
     -- 格式化数据
     mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+    -- code_actions
+    mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+    -- go xx
+    mapbuf("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+    -- gh
+    mapbuf("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
+    -- gr 
+    mapbuf("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+     -- diagnostic
+  mapbuf("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 end
 -- telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
