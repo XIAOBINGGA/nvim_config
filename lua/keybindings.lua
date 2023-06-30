@@ -8,7 +8,7 @@ local opt = {
 }
 -- 本地变量
 local map = vim.api.nvim_set_keymap
-
+-- buffer 切换
 map("n", "<leader>bn", ':bp<CR>', opt)
 map("n", '<leader>bp', ':bn<CR>', opt)
 
