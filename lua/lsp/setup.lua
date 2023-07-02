@@ -15,6 +15,7 @@ lspinstaller.setup({
 local servers = {
     -- sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
     lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+    rescriptls = require("lsp.config.res"),
     -- bashls = require("lsp.config.bash"),
     -- pyright = require("lsp.config.pyright"),
     -- html = require("lsp.config.html"),
