@@ -105,7 +105,7 @@ packer.startup({
 
         -- -------------------------------------------------------
         -- 添加Rescript
-        -- use ('nkrkv/nvim-treesitter-rescript')
+        use ({'nkrkv/nvim-treesitter-rescript', ft = {'rescript', 'res', 'resi'}})
         -- use({"akinsho/toggleterm.nvim"})
         -- surround
         use("kylechui/nvim-surround")

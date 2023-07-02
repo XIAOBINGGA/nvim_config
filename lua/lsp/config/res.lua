@@ -1,7 +1,4 @@
 local opts = {
-    settings = {
-      askToStartBuild = 1,
-    },
     on_attach = function(client, bufnr)
         local function buf_set_keymap(...)
             -- vim.notify("加载 lspconfig keybing 1")
