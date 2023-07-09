@@ -18,16 +18,16 @@ vim.o.tabstop = 2
 vim.bo.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftround = true
--- -- >> << 时移动长度
--- vim.o.shiftwidth = 2
--- vim.bo.shiftwidth = 2
+-- >> << 时移动长度
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
 -- 空格替代tab
 vim.o.expandtab = true
 vim.bo.expandtab = true
--- -- 新行对齐当前行
--- vim.o.autoindent = true
--- vim.bo.autoindent = true
--- vim.o.smartindent = true
+-- 新行对齐当前行
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.smartindent = true
 -- -- 搜索大小写不敏感，除非包含大写
 -- vim.o.ignorecase = true
 -- vim.o.smartcase = true
@@ -61,15 +61,15 @@ vim.bo.expandtab = true
 -- vim.o.splitright = true
 -- -- 自动补全不自动选中
 -- vim.g.completeopt = "menu,menuone,noselect,noinsert"
--- -- 样式
--- vim.o.background = "dark"
--- vim.o.termguicolors = true
--- vim.opt.termguicolors = true
+-- 样式
+vim.o.background = "dark"
+vim.o.termguicolors = true
+vim.opt.termguicolors = true
 -- -- 不可见字符的显示，这里只把空格显示为一个点
 -- vim.o.list = false
 -- vim.o.listchars = "space:·"
--- -- 补全增强
--- vim.o.wildmenu = true
+-- 补全增强
+vim.o.wildmenu = true
 -- -- Dont' pass messages to |ins-completin menu|
 -- vim.o.shortmess = vim.o.shortmess .. 'c'
 -- -- 补全最多显示10行
