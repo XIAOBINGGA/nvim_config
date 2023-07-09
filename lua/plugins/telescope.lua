@@ -5,6 +5,10 @@ return {
     tools.url_replace('nvim-lua/plenary.nvim'),
   },
   config = function()
-    require('telescope').setup()
+    require('telescope').setup({
+      defaults = {
+        mappings = require('keybings').telescopeList
+      }
+    })
   end
 }

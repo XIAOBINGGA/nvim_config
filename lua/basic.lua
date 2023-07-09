@@ -72,8 +72,8 @@ vim.opt.termguicolors = true
 vim.o.wildmenu = true
 -- -- Dont' pass messages to |ins-completin menu|
 -- vim.o.shortmess = vim.o.shortmess .. 'c'
--- -- 补全最多显示10行
--- vim.o.pumheight = 10
+-- 补全最多显示10行
+vim.o.pumheight = 10
 -- -- 永远显示 tabline
 -- vim.o.showtabline = 1
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
