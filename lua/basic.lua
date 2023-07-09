@@ -1,6 +1,6 @@
 -- -- utf8
--- vim.g.encoding = "UTF-8"
--- vim.o.fileencoding = 'utf-8'
+vim.g.encoding = "UTF-8"
+vim.o.fileencoding = 'utf-8'
 -- -- jkhl 移动时光标周围保留8行
 -- vim.o.scrolloff = 8
 -- vim.o.sidescrolloff = 8
@@ -13,17 +13,17 @@ vim.wo.relativenumber = true
 -- vim.wo.signcolumn = "yes"
 -- -- 右侧参考线，超过表示代码太长了，考虑换行
 -- -- vim.wo.colorcolumn = "80"
--- -- 缩进2个空格等于一个Tab
--- vim.o.tabstop = 2
--- vim.bo.tabstop = 2
--- vim.o.softtabstop = 2
--- vim.o.shiftround = true
+-- 缩进2个空格等于一个Tab
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftround = true
 -- -- >> << 时移动长度
 -- vim.o.shiftwidth = 2
 -- vim.bo.shiftwidth = 2
--- -- 空格替代tab
--- vim.o.expandtab = true
--- vim.bo.expandtab = true
+-- 空格替代tab
+vim.o.expandtab = true
+vim.bo.expandtab = true
 -- -- 新行对齐当前行
 -- vim.o.autoindent = true
 -- vim.bo.autoindent = true
@@ -76,6 +76,6 @@ vim.wo.relativenumber = true
 -- vim.o.pumheight = 10
 -- -- 永远显示 tabline
 -- vim.o.showtabline = 1
--- -- 使用增强状态栏插件后不再需要 vim 的模式提示
--- vim.o.showmode = false
---
+-- 使用增强状态栏插件后不再需要 vim 的模式提示
+vim.o.showmode = false
+
