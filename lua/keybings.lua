@@ -3,8 +3,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local opt = {
-	noremap = true,
-	silent = true
+  noremap = true,
+  silent = true
 }
 -- 本地变量
 local map = vim.api.nvim_set_keymap
@@ -59,27 +59,27 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 local PlugsKey = {}
 -- nvim-cmp 自动补全快捷键
 PlugsKey.cmp = function(cmp)
-      local feedkey = function(key, mode)
+  local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
   end
 
   local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-  end 
-    return {
-        -- 出现补全
-        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
-        -- 取消
-        ["<A-,>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close()
-        }),
-        -- 上一个
-        -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-        -- 下一个
-        -- ["<C-j>"] = cmp.mapping.select_next_item(),
-           -- Super Tab
+  end
+  return {
+    -- 出现补全
+    ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    -- 取消
+    ["<A-,>"] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close()
+    }),
+    -- 上一个
+    -- ["<C-k>"] = cmp.mapping.select_prev_item(),
+    -- 下一个
+    -- ["<C-j>"] = cmp.mapping.select_next_item(),
+    -- Super Tab
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -90,52 +90,66 @@ PlugsKey.cmp = function(cmp)
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, {"i", "s"}),
-    
+    end, { "i", "s" }),
+
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
       elseif vim.fn["vsnip#jumpable"](-1) == 1 then
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end
-    end, {"i", "s"}),
+    end, { "i", "s" }),
     -- end of super Tab
-        -- 确认
-        ["<CR>"] = cmp.mapping.confirm({
-            select = true,
-            behavior = cmp.ConfirmBehavior.Replace
-        }),
-        -- 如果窗口内容太多，可以滚动
-        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
-        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"})
-    }
+    -- 确认
+    ["<CR>"] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.ConfirmBehavior.Replace
+    }),
+    -- 如果窗口内容太多，可以滚动
+    ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" })
+  }
 end
 -- telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 PlugsKey.telescopeList = {
-    i = {
-        -- 上下移动
-        ["<C-j>"] = "move_selection_next",
-        ["<C-k>"] = "move_selection_previous",
-        ["<C-n>"] = "move_selection_next",
-        ["<C-p>"] = "move_selection_previous",
-        -- 历史记录
-        ["<Down>"] = "cycle_history_next",
-        ["<Up>"] = "cycle_history_prev",
-        -- 关闭窗口
-        -- ["<esc>"] = actions.close,
-        ["<C-c>"] = "close",
-        -- 预览窗口上下滚动
-        ["<C-u>"] = "preview_scrolling_up",
-        ["<C-d>"] = "preview_scrolling_down"
-    }
+  i = {
+    -- 上下移动
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<C-n>"] = "move_selection_next",
+    ["<C-p>"] = "move_selection_previous",
+    -- 历史记录
+    ["<Down>"] = "cycle_history_next",
+    ["<Up>"] = "cycle_history_prev",
+    -- 关闭窗口
+    -- ["<esc>"] = actions.close,
+    ["<C-c>"] = "close",
+    -- 预览窗口上下滚动
+    ["<C-u>"] = "preview_scrolling_up",
+    ["<C-d>"] = "preview_scrolling_down"
+  }
 }
 -- lsp
 PlugsKey.mapLSP = function(mapbuf)
-	-- 格式化
-	mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+  -- rename
+  mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+  -- 格式化数据
+  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+  -- code_actions
+  mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+  -- go xx
+  mapbuf("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+  -- gh
+  mapbuf("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
+  -- gr
+  mapbuf("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+  -- diagnostic
+  mapbuf("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 end
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
