@@ -37,7 +37,6 @@ local opts = {
     local function buf_set_keymap(...)
       vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
-    vim.notify('on-attach')
     -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     -- 绑定快捷键
     require("keybings").mapLSP(buf_set_keymap)
