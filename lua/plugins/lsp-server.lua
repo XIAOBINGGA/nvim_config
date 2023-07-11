@@ -1,6 +1,7 @@
 local tools = require('tools')
 local servers = {
-				lua_ls = require("lsp.lua"),
+	lua_ls = require("lsp.lua"),
+  tsserver = require("lsp.ts")
 }
 return {
   tools.url_replace('neovim/nvim-lspconfig'),
