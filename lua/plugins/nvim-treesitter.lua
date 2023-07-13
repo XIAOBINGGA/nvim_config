@@ -1,17 +1,12 @@
-local tools = require('tools')
 return {
-  tools.url_replace('nvim-treesitter/nvim-treesitter'),
+  'nvim-treesitter/nvim-treesitter',
   config = function()
-    local status, treesitter = pcall(require, "nvim-treesitter.configs")
-    if not status then
-      vim.notify("没有找到 nvim-treesitter")
-      return
+    for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+      config.install_info.url = config.install_info.url:gsub("https://github.com/", "git@github.com:")
     end
-    treesitter.setup({
-      -- 安装 language parser
-      -- :TSInstallInfo 命令查看支持的语言
-      ensure_installed = "all",
-      -- 启用代码高亮模块
+    require 'nvim-treesitter.install'.compilers = { 'zig' }
+    require 'nvim-treesitter.configs'.setup({
+      ensure_installed = { "c", "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx" },
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,

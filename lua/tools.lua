@@ -9,14 +9,15 @@ end
 
 local tools = {}
 tools.url_replace = function(url)
-  if url then
-    local data = split(url, '/')
-    if data then
-      data[1] = 'XIAOBINGGA/'
-      return table.concat(data)
-    end
-    return url
-  end
   return url
+  -- if url then
+  --   local data = split(url, '/')
+  --   if data then
+  --     data[1] = 'XIAOBINGGA/'
+  --     return table.concat(data)
+  --   end
+  --   return url
+  -- end
+  -- return url
 end
 return tools
