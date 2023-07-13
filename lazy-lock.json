@@ -12,6 +12,7 @@
   "lspsaga.nvim": { "branch": "def", "commit": "55a18595082a97ca9c1f18e6869e75c348e926b0" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
   "null-ls.nvim": { "branch": "main", "commit": "db09b6c691def0038c456551e4e2772186449f35" },
+  "nvim-autopairs": { "branch": "master", "commit": "e8f7dd7a72de3e7b6626c050a802000e69d53ff0" },
   "nvim-cmp": { "branch": "3-17", "commit": "f6c691f60b9941e4b37610a4a1190866ba02d023" },
   "nvim-lsp-installer": { "branch": "demo/new-setup", "commit": "2bb6bb87af7250555eede642ea691164a7bcea7c" },
   "nvim-lspconfig": { "branch": "master", "commit": "deade69789089c3da15237697156334fb3e943f0" },
