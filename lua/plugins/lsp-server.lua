@@ -1,6 +1,8 @@
 local servers = {
 	lua_ls = require("lsp.lua"),
-  tsserver = require("lsp.ts")
+  tsserver = require("lsp.ts"),
+  cssls = require("lsp.css"),
+  html = require("lsp.html")
 }
 return {
   'neovim/nvim-lspconfig',
