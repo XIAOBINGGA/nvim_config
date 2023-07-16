@@ -7,7 +7,7 @@ vim.o.fileencoding = 'utf-8'
 -- 使用相对行号
 -- vim.wo.number = true
 vim.wo.relativenumber = true
--- -- 高亮所在行
+-- 高亮所在行
 -- vim.wo.cursorline = false
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
@@ -40,18 +40,18 @@ vim.o.smartindent = true
 -- -- 当文件被外部程序修改时，自动加载
 -- vim.o.autoread = true
 -- vim.bo.autoread = true
--- -- 禁止折行
--- vim.wo.wrap = false
+-- 禁止折行
+vim.wo.wrap = true
 -- -- 光标在行首尾时<Left><Right>可以跳到下一行
 -- vim.o.whichwrap = '<,>,[,]'
 -- -- 允许隐藏被修改过的buffer
 -- vim.o.hidden = false
 -- -- 鼠标支持
 -- -- vim.o.mouse = "a"
--- -- 禁止创建备份文件
--- vim.o.backup = false
--- vim.o.writebackup = false
--- vim.o.swapfile = false
+-- 禁止创建备份文件
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.swapfile = false
 -- -- smaller updatetime
 -- vim.o.updatetime = 300
 -- -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置

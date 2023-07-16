@@ -6,7 +6,7 @@ return {
     end
     require 'nvim-treesitter.install'.compilers = { 'zig' }
     require 'nvim-treesitter.configs'.setup({
-      ensure_installed = { "c", "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx" },
+     ensure_installed = { "c", "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx" },
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
