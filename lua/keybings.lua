@@ -134,6 +134,7 @@ PlugsKey.telescopeList = {
 }
 -- lsp
 PlugsKey.mapLSP = function(mapbuf)
+  vim.notify("loa lsp map")
   -- rename
   mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
   -- 格式化数据
