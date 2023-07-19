@@ -1,9 +1,8 @@
-local tools = require('tools')
 return {
-  tools.url_replace('nvim-telescope/telescope.nvim'),
+ 'nvim-telescope/telescope.nvim',
   dependencies = {
-    tools.url_replace('nvim-lua/plenary.nvim'),
-    tools.url_replace('ahmedkhalf/project.nvim')
+    'nvim-lua/plenary.nvim',
+    'ahmedkhalf/project.nvim'
   },
   config = function()
     local status_telescope, telescope = pcall(require, "telescope")
@@ -36,7 +35,6 @@ return {
         "Makefile",
       },
     })
-
     pcall(telescope.load_extension, "projects")
   end
 }
