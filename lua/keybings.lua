@@ -113,6 +113,8 @@ end
 -- telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>pp", ":Telescope projects<CR>", opt)
+map("n", "<leader>pb", ":Telescope buffers<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 PlugsKey.telescopeList = {
   i = {
