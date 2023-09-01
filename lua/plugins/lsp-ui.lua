@@ -1,6 +1,5 @@
-local tools = require('tools')
 return {
-  tools.url_replace('glepnir/lspsaga.nvim'),
+  'glepnir/lspsaga.nvim',
   config = function()
     local status, lspsaga = pcall(require, 'lspsaga')
     if not status then
