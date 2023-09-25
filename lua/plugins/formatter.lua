@@ -1,13 +1,23 @@
 return {
-  "nvimdev/guard.nvim",
-  dependencies = {
-    "nvimdev/guard-collection"
-  },
+  "mhartington/formatter.nvim",
   config = function()
-    local ft = require('guard.filetype')
-    ft('typescript,javascript,typescriptreact'):fmt('prettier')
-    require("guard").setup({
-
+    require("formatter").setup({
+      filetype = {
+        javascript = {
+          function()
+            return {
+              exe = "prettier",
+              args = {
+                -- "--config-path "
+                --   .. os.getenv("XDG_CONFIG_HOME")
+                --   .. "/stylua/stylua.toml",
+                "-",
+              },
+              -- stdin = true,
+            }
+          end,
+        }
+      },
     })
   end
 }
