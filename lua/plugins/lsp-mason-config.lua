@@ -25,10 +25,5 @@ return {
       end
     end
     require("mason-lspconfig").setup_handlers(setup_handlers)
-    -- require("mason-lspconfig").setup_handlers({
-    --   ["lua_ls"] = function()
-    --     servers.lua_ls.on_setup(lspconfig.lua_ls)
-    --   end
-    -- })
   end
 }
