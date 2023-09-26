@@ -1,21 +1,62 @@
 return {
   "mhartington/formatter.nvim",
   config = function()
+    local util = require "formatter.util"
     require("formatter").setup({
       filetype = {
-        javascript = {
-          function()
+        javascriptreact = {
+          function(parser)
+            if not parser then
+              return {
+                exe = "prettier",
+                args = {
+                  "--stdin-filepath",
+                  util.escape_path(util.get_current_buffer_file_path()),
+                },
+                stdin = true,
+                try_node_modules = true,
+              }
+            end
+
             return {
               exe = "prettier",
               args = {
-                -- "--config-path "
-                --   .. os.getenv("XDG_CONFIG_HOME")
-                --   .. "/stylua/stylua.toml",
-                "-",
+                "--stdin-filepath",
+                util.escape_path(util.get_current_buffer_file_path()),
+                "--parser",
+                parser,
               },
-              -- stdin = true,
+              stdin = true,
+              try_node_modules = true,
             }
-          end,
+          end
+        },
+        javascript = {
+          function(parser)
+            if not parser then
+              return {
+                exe = "prettier",
+                args = {
+                  "--stdin-filepath",
+                  util.escape_path(util.get_current_buffer_file_path()),
+                },
+                stdin = true,
+                try_node_modules = true,
+              }
+            end
+
+            return {
+              exe = "prettier",
+              args = {
+                "--stdin-filepath",
+                util.escape_path(util.get_current_buffer_file_path()),
+                "--parser",
+                parser,
+              },
+              stdin = true,
+              try_node_modules = true,
+            }
+          end
         }
       },
     })
