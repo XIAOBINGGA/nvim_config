@@ -30,7 +30,7 @@ return {
         --     list = list_keys
         -- },
         -- 不显示行数
-        number = false,
+        number = true,
         relativenumber = false,
         -- 显示图标
         signcolumn = "yes"
