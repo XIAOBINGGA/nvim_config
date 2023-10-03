@@ -6,7 +6,8 @@ return {
     end
     require 'nvim-treesitter.install'.compilers = { 'zig' }
     require 'nvim-treesitter.configs'.setup({
-      ensure_installed = { "c", "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx" },
+      ensure_installed = { "c", "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx", "regex", "bash",
+        "markdown", "markdown_inline" },
       rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
