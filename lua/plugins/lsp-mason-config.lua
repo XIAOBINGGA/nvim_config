@@ -3,7 +3,8 @@ local servers = {
   tsserver = require("lsp.ts"),
   cssls = require("lsp.css"),
   html = require("lsp.html"),
-  jsonls = require("lsp.json")
+  jsonls = require("lsp.json"),
+  dartls = require("lsp.dart")
 }
 
 return {
@@ -19,8 +20,12 @@ return {
     local setup_handlers = {}
     for name, config in pairs(servers) do
       if config ~= nil and type(config) == 'table' then
-        setup_handlers[name] = function()
+        if name == 'dartls' then
           config.on_setup(lspconfig[name])
+        else
+          setup_handlers[name] = function()
+            config.on_setup(lspconfig[name])
+          end
         end
       end
     end
