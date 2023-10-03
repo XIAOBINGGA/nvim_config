@@ -1,7 +1,9 @@
 return {
-  'sainnhe/everforest',
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
   config = function()
-    vim.cmd [[colorscheme everforest]]
-    vim.g.everforest_background = 'soft'
+    vim.cmd [[colorscheme tokyonight]]
   end
 }
