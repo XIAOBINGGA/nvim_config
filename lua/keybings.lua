@@ -16,7 +16,7 @@ map("n", ":", ";", opt)
 
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>q", ":q<CR>", opt)
-map("n", "qq", ":q!<CR>", opt)
+-- map("n", "qq", ":q!<CR>", opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -137,7 +137,7 @@ PlugsKey.telescopeList = {
 -- rename
 map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
 -- 格式化数据
-map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+map("n", "<leader>f", "<cmd>Format<CR>", opt)
 -- code_actions
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
 -- go xx

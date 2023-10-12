@@ -1,6 +1,6 @@
-local tools = require('tools')
 return {
-  tools.url_replace('nvim-tree/nvim-tree.lua'),
+  'nvim-tree/nvim-tree.lua',
+  event = 'VeryLazy',
   config = function()
     require("nvim-tree").setup({
       -- on_attach = list_keys,

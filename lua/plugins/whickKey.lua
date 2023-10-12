@@ -5,9 +5,13 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+  config = function ()
+    local wk = require("which-key")
+    wk.register({
+      ["q"] = {
+        q = {":q!<CR>", "强制退出"},
+        w = {":wq<CR>", '保存退出'}
+      }
+    })
+  end
 }

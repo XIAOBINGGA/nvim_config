@@ -1,6 +1,6 @@
-local tools = require('tools')
 return {
-  tools.url_replace('numToStr/Comment.nvim'),
+  'numToStr/Comment.nvim',
+  event = "VeryLazy",
   config = function()
     require('Comment').setup()
   end

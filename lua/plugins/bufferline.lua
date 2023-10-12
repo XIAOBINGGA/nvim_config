@@ -1,6 +1,6 @@
-local tools = require('tools')
 return {
-  tools.url_replace('akinsho/bufferline.nvim'),
+  'akinsho/bufferline.nvim',
+  event = 'VeryLazy',
   config = function()
     require('bufferline').setup({
       options = {
