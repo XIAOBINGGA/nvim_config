@@ -23,7 +23,7 @@ return {
     for name, config in pairs(servers) do
       if config ~= nil and type(config) == 'table' then
         if name == 'dartls' then
-          config.on_setup(lspconfig[name])
+          -- config.on_setup(lspconfig[name])
         else
           setup_handlers[name] = function()
             config.on_setup(lspconfig[name])
