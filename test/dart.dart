@@ -1,10 +1,5 @@
 void main() {
-  var a = '123';
-  void agc(args) {
-    print(a);
+  if (1==2) {
+    print(9);
   }
-
-  ;
-
-  agc(a);
 }

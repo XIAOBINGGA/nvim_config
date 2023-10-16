@@ -1,6 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   event = 'VeryLazy',
+  enabled = true,
   dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
@@ -48,11 +49,11 @@ return {
         "yaml",
         "zig"
       },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
+      -- auto_install = true,
+      -- highlight = {
+      --   enable = true,
+      --   additional_vim_regex_highlighting = false,
+      -- },
       rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
