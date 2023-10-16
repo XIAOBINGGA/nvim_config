@@ -9,6 +9,7 @@ local servers = {
 
 return {
   "williamboman/mason-lspconfig.nvim",
+  event = "VeryLazy",
   dependencies = {
     "neovim/nvim-lspconfig",
   },

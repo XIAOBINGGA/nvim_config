@@ -1,5 +1,6 @@
 return {
   'glepnir/lspsaga.nvim',
+  event = 'VeryLazy',
   config = function()
     local status, lspsaga = pcall(require, 'lspsaga')
     if not status then
