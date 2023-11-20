@@ -7,4 +7,5 @@ void main() {
   var a = 6;
 
   a = b;
+  int cc = 2
 }

@@ -4,7 +4,7 @@ return {
   config = function()
     require('bufferline').setup({
       options = {
-        numbers = 'id',
+        -- numbers = 'id',
       }
     })
   end
