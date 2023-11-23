@@ -32,6 +32,7 @@
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "telescope.nvim": { "branch": "master", "commit": "20bf20500c95208c3ac0ef07245065bf94dcab15" },
+  "vim-rescript": { "branch": "master", "commit": "7690aa058de6193eb1a71411b9c48514c7e58286" },
   "vim-vsnip": { "branch": "master", "commit": "8eebdf6ab4a880d845893f210fd20516d2e2384f" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
