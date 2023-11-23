@@ -22,10 +22,11 @@ return {
         "tsx",
       },
       -- auto_install = true,
-      -- highlight = {
-      --   enable = true,
-      --   additional_vim_regex_highlighting = false,
-      -- },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+        disable = {"dart"},
+      },
       rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
