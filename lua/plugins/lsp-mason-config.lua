@@ -4,7 +4,8 @@ local servers = {
   cssls = require("lsp.css"),
   html = require("lsp.html"),
   jsonls = require("lsp.json"),
-  dartls = require("lsp.dart")
+  dartls = require("lsp.dart"),
+  rescriptls = require("lsp.res")
 }
 
 return {
