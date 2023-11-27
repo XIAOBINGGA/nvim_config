@@ -17,7 +17,7 @@ return {
   },
   config = function()
     require("mason-lspconfig").setup {
-      ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls" }
+      ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls" }
     }
     local lspconfig = require("lspconfig")
     local setup_handlers = {}
