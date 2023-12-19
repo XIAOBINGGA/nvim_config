@@ -151,7 +151,7 @@ map("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
 map("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 PlugsKey.mapLSP = function(mapbuf)
-  vim.notify("load lsp key map")
+  -- vim.notify("load lsp key map")
 end
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
