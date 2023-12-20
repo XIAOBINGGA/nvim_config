@@ -1,4 +1,4 @@
-local symbols = require('lua.tools').symbols
+local symbols = require('tools').symbols
 return {
   'akinsho/bufferline.nvim',
   dependencies = {
@@ -13,7 +13,7 @@ return {
       offsets = {
         {
           filetype = "NvimTree",
-          text = "File Explorer 1",
+          text = "File Explorer",
           highlight = "Directory",
           text_align = "left",
         },
