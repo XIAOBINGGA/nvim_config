@@ -1,7 +1,8 @@
 return {
   'rescript-lang/vim-rescript',
   event = "VeryLazy",
-  config = function ()
-
+  ft="res",
+  config=function ()
+    
   end
 }

@@ -110,9 +110,12 @@ PlugsKey.cmp = function(cmp)
   }
 end
 -- telescope
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
-map("n", "<leader>tp", ":Telescope projects<CR>", opt)
+-- map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+map("n", "<leader>tf", ":Telescope find_files<CR>", opt)
+-- map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>tg", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>tp", ":Telescope project<CR>", opt)
+map("n", "<leader>tb", ":Telescope file_browser<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 PlugsKey.telescopeList = {
   i = {

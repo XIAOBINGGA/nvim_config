@@ -4,7 +4,6 @@ return {
   event = "VeryLazy",
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    "arkav/lualine-lsp-progress",
   },
   opts = {
     extensions = { "nvim-tree" },
@@ -18,17 +17,6 @@ return {
       lualine_b = { "branch", "diff" },
       lualine_c = {
         "filename",
-        {
-          "lsp_progress",
-          spinner_symbols = {
-            symbols.Dice1,
-            symbols.Dice2,
-            symbols.Dice3,
-            symbols.Dice4,
-            symbols.Dice5,
-            symbols.Dice6,
-          },
-        },
       },
       lualine_x = {
         "filesize",
