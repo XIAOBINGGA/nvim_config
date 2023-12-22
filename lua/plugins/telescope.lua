@@ -3,7 +3,8 @@ return {
   event = "VeryLazy",
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'ahmedkhalf/project.nvim'
+    'nvim-telescope/telescope-file-browser.nvim',
+    'nvim-telescope/telescope-project.nvim',
   },
   config = function()
     local status_telescope, telescope = pcall(require, "telescope")
@@ -12,30 +13,27 @@ return {
       return
     end
     telescope.setup({
+      extensions = {
+        file_browser = {
+          -- theme = "ivy",
+          hijack_netrw = true,
+        },
+        project = {
+          base_dirs = {
+            '~/src',
+          },
+          hidden_files = true, -- default: false
+          theme = "dropdown",
+          order_by = "recent",
+          search_by = {"path", "title"},
+          sync_with_nvim_tree = false, -- default false 
+        },
+      },
       defaults = {
         mappings = require('keybings').telescopeList
       }
     })
-    local status, project = pcall(require, "project_nvim")
-    if not status then
-      vim.notify("没有找到 project_nvim")
-      return
-    end
-    project.setup({
-      detection_methods = { "pattern" },
-      patterns = {
-        "README.md",
-        "Cargo.toml",
-        "package.json",
-        ".sln",
-        ".git",
-        "_darcs",
-        ".hg",
-        ".bzr",
-        ".svn",
-        "Makefile",
-      },
-    })
-    pcall(telescope.load_extension, "projects")
+    pcall(telescope.load_extension, 'file_browser')
+    pcall(telescope.load_extension, "project")
   end
 }
