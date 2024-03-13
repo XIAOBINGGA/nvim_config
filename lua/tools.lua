@@ -1,4 +1,7 @@
 local tools = {}
+tools.isVscode = function ()
+    return vim.g.vscode
+end
 tools.symbols = {
     Affirmative = "✓ ",
     Array = " ",
