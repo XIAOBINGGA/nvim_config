@@ -1,7 +1,7 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufEnter",
-  enabled = true,
+  enabled = false,
   main = "ibl",
   config = function ()
     -- local highlight = {

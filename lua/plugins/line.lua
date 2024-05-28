@@ -9,8 +9,8 @@ return {
     extensions = { "nvim-tree" },
     options = {
       theme = "auto",
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      -- component_separators = { left = "|", right = "|" },
+      -- section_separators = { left = "|", right = "|" },
       disabled_filetypes = { "undotree", "diff", "Outline" },
     },
     sections = {
