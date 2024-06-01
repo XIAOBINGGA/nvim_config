@@ -33,8 +33,8 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
 vim.o.hlsearch = true
--- -- 边输入边搜索
--- vim.o.incsearch = true
+-- 边输入边搜索
+vim.o.incsearch = true
 -- 命令行高为2，提供足够的显示空间
 -- vim.o.cmdheight = 1
 -- 当文件被外部程序修改时，自动加载
@@ -51,10 +51,10 @@ vim.o.mouse = "a"
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
--- -- smaller updatetime
--- vim.o.updatetime = 300
--- -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
--- vim.o.timeoutlen = 500
+-- smaller updatetime
+vim.o.updatetime = 300
+-- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
+vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -65,8 +65,8 @@ vim.o.background = "light"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- -- 不可见字符的显示，这里只把空格显示为一个点
--- vim.o.list = false
--- vim.o.listchars = "space:·"
+vim.o.list = false
+vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|

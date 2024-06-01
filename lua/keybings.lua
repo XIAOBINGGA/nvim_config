@@ -16,7 +16,6 @@ map("n", ":", ";", opt)
 
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>q", ":q<CR>", opt)
--- map("n", "qq", ":q!<CR>", opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -40,19 +39,9 @@ map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
--- <leader> + hjkl 窗口之间跳转
-map("n", "<leader>h", "<C-w>h", opt)
-map("n", "<leader>j", "<C-w>j", opt)
-map("n", "<leader>k", "<C-w>k", opt)
-map("n", "<leader>l", "<C-w>l", opt)
 -- 左右比例控制
 map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
--- map("n", "s,", ":vertical resize -10<CR>", opt)
--- map("n", "s.", ":vertical resize +10<CR>", opt)
--- 上下比例
--- map("n", "sj", ":resize +10<CR>", opt)
--- map("n", "sk", ":resize -10<CR>", opt)
 map("n", "<C-Down>", ":resize +2<CR>", opt)
 map("n", "<C-Up>", ":resize -2<CR>", opt)
 local PlugsKey = {}
@@ -110,51 +99,49 @@ PlugsKey.cmp = function(cmp)
   }
 end
 -- telescope
--- map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-map("n", "<leader>tf", ":Telescope find_files<CR>", opt)
--- map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
-map("n", "<leader>tg", ":Telescope live_grep<CR>", opt)
-map("n", "<leader>tp", ":Telescope project<CR>", opt)
-map("n", "<leader>tb", ":Telescope file_browser<CR>", opt)
+-- map("n", "<leader>tf", ":Telescope find_files<CR>", opt)
+-- map("n", "<leader>tg", ":Telescope live_grep<CR>", opt)
+-- map("n", "<leader>tp", ":Telescope project<CR>", opt)
+-- map("n", "<leader>tb", ":Telescope file_browser<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
-PlugsKey.telescopeList = {
-  i = {
-    -- 上下移动
-    ["<C-j>"] = "move_selection_next",
-    ["<C-k>"] = "move_selection_previous",
-    ["<C-n>"] = "move_selection_next",
-    ["<C-p>"] = "move_selection_previous",
-    -- 历史记录
-    ["<Down>"] = "cycle_history_next",
-    ["<Up>"] = "cycle_history_prev",
-    -- 关闭窗口
-    -- ["<esc>"] = actions.close,
-    ["<C-c>"] = "close",
-    -- 预览窗口上下滚动
-    ["<C-u>"] = "preview_scrolling_up",
-    ["<C-d>"] = "preview_scrolling_down"
-  }
-}
+-- PlugsKey.telescopeList = {
+--   i = {
+--     -- 上下移动
+--     ["<C-j>"] = "move_selection_next",
+--     ["<C-k>"] = "move_selection_previous",
+--     ["<C-n>"] = "move_selection_next",
+--     ["<C-p>"] = "move_selection_previous",
+--     -- 历史记录
+--     ["<Down>"] = "cycle_history_next",
+--     ["<Up>"] = "cycle_history_prev",
+--     -- 关闭窗口
+--     -- ["<esc>"] = actions.close,
+--     ["<C-c>"] = "close",
+--     -- 预览窗口上下滚动
+--     ["<C-u>"] = "preview_scrolling_up",
+--     ["<C-d>"] = "preview_scrolling_down"
+--   }
+-- }
 -- lsp
 -- rename
-map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
--- 格式化数据
-map("n", "<leader>f", "<cmd>Format<CR>", opt)
--- code_actions
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
--- go xx
-map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
--- gh
-map("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
--- gr
-map("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
--- diagnostic
-map("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-map("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
-map("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
-PlugsKey.mapLSP = function(mapbuf)
+-- map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+-- -- 格式化数据
+-- map("n", "<leader>f", "<cmd>Format<CR>", opt)
+-- -- code_actions
+-- map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+-- -- go xx
+-- map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+-- -- gh
+-- map("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
+-- -- gr
+-- map("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+-- -- diagnostic
+-- map("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+-- map("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+-- map("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
+-- PlugsKey.mapLSP = function(mapbuf)
   -- vim.notify("load lsp key map")
-end
+-- end
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)

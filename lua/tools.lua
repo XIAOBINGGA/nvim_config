@@ -58,4 +58,7 @@ tools.symbols = {
     Variable = "󰀫 ",
     Warn = " ",
 }
+tools.keymap = function (key)
+  return key
+end
 return tools

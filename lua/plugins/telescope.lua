@@ -30,7 +30,7 @@ return {
         },
       },
       defaults = {
-        mappings = require('keybings').telescopeList
+        -- mappings = require('keybings').telescopeList
       }
     })
     pcall(telescope.load_extension, 'file_browser')
