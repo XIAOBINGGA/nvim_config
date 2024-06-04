@@ -2,18 +2,10 @@ return {
   'nvim-tree/nvim-tree.lua',
   event = 'VeryLazy',
   config = function()
-
-    -- disable netrw at the very start of your init.lua
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-
-    -- optionally enable 24-bit colour
-    vim.opt.termguicolors = true
-
     require("nvim-tree").setup({
       -- on_attach = list_keys,
       -- 完全禁止内置netrw
-      -- disable_netrw = true,
+      disable_netrw = true,
       -- 不显示 git 状态图标
       git = {
         enable = false

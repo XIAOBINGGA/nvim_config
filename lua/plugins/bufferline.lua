@@ -18,6 +18,9 @@ return {
           text_align = "left",
         },
       },
+      numbers = function(opts)
+        return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+      end,
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(_, _, diagnostics_dict, _)
         local s = " "
@@ -33,13 +36,13 @@ return {
     require('bufferline').setup(opts)
   end,
   keys = {
-    { "<leader>bc", ":BufferLinePickClose<CR>", desc = "pick close", silent = true, noremap = true },
-    { "<leader>bb", ":Telescope buffers<CR>", desc = "buffer list", silent = true, noremap = true },
-    -- <esc> is added in case current buffer is the last
-    { "<leader>bd", ":bdelete!<CR><Esc>", desc = "close current buffer", silent = true, noremap = true },
-    { "<leader>bh", ":BufferLineCyclePrev<CR>", desc = "prev buffer", silent = true, noremap = true },
-    { "<leader>bl", ":BufferLineCycleNext<CR>", desc = "next buffer", silent = true, noremap = true },
-    { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "close others", silent = true, noremap = true },
-    { "<leader>bp", ":BufferLinePick<CR>", desc = "pick buffer", silent = true, noremap = true },
+    -- { "<leader>bc", ":BufferLinePickClose<CR>", desc = "pick close", silent = true, noremap = true },
+    -- { "<leader>bb", ":Telescope buffers<CR>", desc = "buffer list", silent = true, noremap = true },
+    -- -- <esc> is added in case current buffer is the last
+    -- { "<leader>bd", ":bdelete!<CR><Esc>", desc = "close current buffer", silent = true, noremap = true },
+    -- { "<leader>bh", ":BufferLineCyclePrev<CR>", desc = "prev buffer", silent = true, noremap = true },
+    -- { "<leader>bl", ":BufferLineCycleNext<CR>", desc = "next buffer", silent = true, noremap = true },
+    -- { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "close others", silent = true, noremap = true },
+    -- { "<leader>bp", ":BufferLinePick<CR>", desc = "pick buffer", silent = true, noremap = true },
   },
 }

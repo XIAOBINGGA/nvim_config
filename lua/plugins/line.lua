@@ -9,13 +9,14 @@ return {
     extensions = { "nvim-tree" },
     options = {
       theme = "auto",
-      -- component_separators = { left = "|", right = "|" },
-      -- section_separators = { left = "|", right = "|" },
+
+      section_separators = { left = " ", right = "" }, 
+      component_separators = { left = " ", right = "" }, 
       disabled_filetypes = { "undotree", "diff", "Outline" },
     },
     sections = {
       lualine_b = { "branch", "diff" },
-      lualine_c = {
+       lualine_c = {
         "filename",
       },
       lualine_x = {
