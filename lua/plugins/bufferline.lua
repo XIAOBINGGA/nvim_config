@@ -32,17 +32,20 @@ return {
       end,
     },
   },
+  keys = {
+    { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
+    { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    { "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete Other Buffers" },
+    { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
+    { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
+    { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+    { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+    { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+    { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+    { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+    { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+  },
   config = function(_, opts)
     require('bufferline').setup(opts)
   end,
-  keys = {
-    -- { "<leader>bc", ":BufferLinePickClose<CR>", desc = "pick close", silent = true, noremap = true },
-    -- { "<leader>bb", ":Telescope buffers<CR>", desc = "buffer list", silent = true, noremap = true },
-    -- -- <esc> is added in case current buffer is the last
-    -- { "<leader>bd", ":bdelete!<CR><Esc>", desc = "close current buffer", silent = true, noremap = true },
-    -- { "<leader>bh", ":BufferLineCyclePrev<CR>", desc = "prev buffer", silent = true, noremap = true },
-    -- { "<leader>bl", ":BufferLineCycleNext<CR>", desc = "next buffer", silent = true, noremap = true },
-    -- { "<leader>bo", ":BufferLineCloseOthers<CR>", desc = "close others", silent = true, noremap = true },
-    -- { "<leader>bp", ":BufferLinePick<CR>", desc = "pick buffer", silent = true, noremap = true },
-  },
 }
