@@ -22,7 +22,7 @@ return {
         "typescript",
         "tsx",
       },
-      -- auto_install = true,
+      auto_install = false,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
@@ -39,6 +39,7 @@ return {
       },
       incremental_selection = {
         enable = true,
+        disable = {"dart"},
         keymaps = {
           init_selection = "<CR>",
           node_incremental = "<CR>",
