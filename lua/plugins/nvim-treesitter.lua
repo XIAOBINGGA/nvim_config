@@ -5,10 +5,12 @@ return {
   config = function()
     for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
       config.install_info.url = config.install_info.url:gsub("https://github.com/", "git@github.com:")
+      config.help = nil
     end
     require 'nvim-treesitter.install'.compilers = { 'zig' }
     require 'nvim-treesitter.configs'.setup({
       ensure_installed = {
+        -- "vimdoc",
         "c",
         "regex",
         "lua",
@@ -22,7 +24,7 @@ return {
         "typescript",
         "tsx",
       },
-      auto_install = false,
+      -- auto_install = true,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
