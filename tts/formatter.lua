@@ -1,8 +1,8 @@
 return {
   "mhartington/formatter.nvim",
-  event = 'VeryLazy',
+  event = "VeryLazy",
   config = function()
-    local util = require "formatter.util"
+    local util = require("formatter.util")
     require("formatter").setup({
       filetype = {
         less = {
@@ -30,7 +30,7 @@ return {
               stdin = true,
               try_node_modules = true,
             }
-          end
+          end,
         },
 
         javascriptreact = {
@@ -58,7 +58,7 @@ return {
               stdin = true,
               try_node_modules = true,
             }
-          end
+          end,
         },
         typescript = {
           function(parser)
@@ -85,7 +85,7 @@ return {
               stdin = true,
               try_node_modules = true,
             }
-          end
+          end,
         },
         javascript = {
           function(parser)
@@ -112,9 +112,9 @@ return {
               stdin = true,
               try_node_modules = true,
             }
-          end
-        }
+          end,
+        },
       },
     })
-  end
+  end,
 }

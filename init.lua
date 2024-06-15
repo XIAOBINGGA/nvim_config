@@ -1,3 +1,3 @@
-require('basic')
-require('keybings')
-require('manage')
+require("basic")
+require("keybings")
+require("manage")

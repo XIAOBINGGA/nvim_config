@@ -3,9 +3,9 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    background = "soft"
+    background = "soft",
   },
   config = function()
-    vim.cmd [[colorscheme everforest]]
-  end
-};
+    vim.cmd([[colorscheme everforest]])
+  end,
+}

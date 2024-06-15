@@ -1,8 +1,7 @@
 return {
-  'nvim-tree/nvim-tree.lua',
-  event = 'VeryLazy',
+  "nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
   config = function()
-
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
@@ -16,11 +15,11 @@ return {
       -- disable_netrw = true,
       -- 不显示 git 状态图标
       git = {
-        enable = false
+        enable = false,
       },
       filters = {
         -- 隐藏 .文件
-        dotfiles = true
+        dotfiles = true,
         -- 隐藏 node_modules 文件夹
         -- custom = { "node_modules" },
       },
@@ -41,15 +40,15 @@ return {
         number = false,
         relativenumber = false,
         -- 显示图标
-        signcolumn = "yes"
+        signcolumn = "yes",
       },
       actions = {
         open_file = {
           -- 首次打开大小适配
           resize_window = true,
           -- 打开文件时关闭 tree
-          quit_on_open = true
-        }
+          quit_on_open = true,
+        },
       },
       update_cwd = true,
       update_focused_file = {
@@ -57,5 +56,5 @@ return {
         update_cwd = true,
       },
     })
-  end
+  end,
 }

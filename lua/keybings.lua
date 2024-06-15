@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 
 local opt = {
   noremap = true,
-  silent = true
+  silent = true,
 }
 -- 本地变量
 local map = vim.api.nvim_set_keymap
@@ -140,7 +140,7 @@ local PlugsKey = {}
 -- map("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 -- map("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 -- PlugsKey.mapLSP = function(mapbuf)
-  -- vim.notify("load lsp key map")
+-- vim.notify("load lsp key map")
 -- end
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)

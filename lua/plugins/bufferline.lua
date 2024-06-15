@@ -1,10 +1,10 @@
-local symbols = require('tools').symbols
+local symbols = require("tools").symbols
 return {
-  'akinsho/bufferline.nvim',
+  "akinsho/bufferline.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  event = 'VeryLazy',
+  event = "VeryLazy",
   opts = {
     options = {
       close_command = "bdelete! %d",
@@ -19,7 +19,7 @@ return {
         },
       },
       numbers = function(opts)
-        return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+        return string.format("%s·%s", opts.raise(opts.id), opts.lower(opts.ordinal))
       end,
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(_, _, diagnostics_dict, _)
@@ -46,6 +46,6 @@ return {
     { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
   },
   config = function(_, opts)
-    require('bufferline').setup(opts)
+    require("bufferline").setup(opts)
   end,
 }

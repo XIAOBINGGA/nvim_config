@@ -1,11 +1,11 @@
 return {
-  'akinsho/flutter-tools.nvim',
+  "akinsho/flutter-tools.nvim",
   event = "VeryLazy",
   enabled = true,
   ft = "dart",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'stevearc/dressing.nvim', -- optional for vim.ui.select
+    "nvim-lua/plenary.nvim",
+    "stevearc/dressing.nvim", -- optional for vim.ui.select
   },
   opts = {
     ui = {
@@ -18,5 +18,5 @@ return {
         device = true,
       },
     },
-  }
+  },
 }

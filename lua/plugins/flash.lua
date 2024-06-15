@@ -5,8 +5,8 @@ return {
   opts = {
     modes = {
       search = {
-        enabled = true
-      }
+        enabled = true,
+      },
     },
   },
   -- stylua: ignore

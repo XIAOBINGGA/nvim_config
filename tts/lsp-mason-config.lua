@@ -5,7 +5,7 @@ local servers = {
   html = require("lsp.html"),
   jsonls = require("lsp.json"),
   dartls = require("lsp.dart"),
-  rescriptls = require("lsp.res")
+  rescriptls = require("lsp.res"),
 }
 
 return {
@@ -16,14 +16,14 @@ return {
     "neovim/nvim-lspconfig",
   },
   config = function()
-    require("mason-lspconfig").setup {
-      ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls" }
-    }
+    require("mason-lspconfig").setup({
+      ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls" },
+    })
     local lspconfig = require("lspconfig")
     local setup_handlers = {}
     for name, config in pairs(servers) do
-      if config ~= nil and type(config) == 'table' then
-        if name == 'dartls' then
+      if config ~= nil and type(config) == "table" then
+        if name == "dartls" then
           -- config.on_setup(lspconfig[name])
         else
           setup_handlers[name] = function()
@@ -33,5 +33,5 @@ return {
       end
     end
     require("mason-lspconfig").setup_handlers(setup_handlers)
-  end
+  end,
 }

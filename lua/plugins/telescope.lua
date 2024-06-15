@@ -1,16 +1,45 @@
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.6',
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.6",
   event = "VeryLazy",
   dependencies = {
-    'nvim-lua/plenary.nvim',
+    "nvim-lua/plenary.nvim",
     -- 'nvim-telescope/telescope-file-browser.nvim',
     -- 'nvim-telescope/telescope-project.nvim',
   },
   keys = {
-    { "<leader>tf", mode = { "n" }, function() require('telescope.builtin').find_files() end, desc = "find files" },
-    { "<leader>tg", mode = { "n" }, function() require('telescope.builtin').live_grep() end, desc = "live grep" },
-    { "<leader>tb", mode = { "n" }, function() require('telescope.builtin').buffers() end, desc = "buffers" },
-    { "<leader>th", mode = { "n" }, function() require('telescope.builtin').help_tags() end, desc = "help tags" },
+    {
+      "<leader>tf",
+      mode = { "n" },
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      desc = "find files",
+    },
+    {
+      "<leader>tg",
+      mode = { "n" },
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      desc = "live grep",
+    },
+    {
+      "<leader>tb",
+      mode = { "n" },
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "buffers",
+    },
+    {
+      "<leader>th",
+      mode = { "n" },
+      function()
+        require("telescope.builtin").help_tags()
+      end,
+      desc = "help tags",
+    },
   },
   config = function()
     local status_telescope, telescope = pcall(require, "telescope")
@@ -32,7 +61,7 @@ return {
     --       theme = "dropdown",
     --       order_by = "recent",
     --       search_by = {"path", "title"},
-    --       sync_with_nvim_tree = false, -- default false 
+    --       sync_with_nvim_tree = false, -- default false
     --     },
     --   },
     --   defaults = {
@@ -41,5 +70,5 @@ return {
     -- })
     -- pcall(telescope.load_extension, 'file_browser')
     -- pcall(telescope.load_extension, "project")
-  end
+  end,
 }

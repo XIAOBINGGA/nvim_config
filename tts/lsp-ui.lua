@@ -1,8 +1,8 @@
 return {
-  'glepnir/lspsaga.nvim',
-  event = 'VeryLazy',
+  "glepnir/lspsaga.nvim",
+  event = "VeryLazy",
   config = function()
-    local status, lspsaga = pcall(require, 'lspsaga')
+    local status, lspsaga = pcall(require, "lspsaga")
     if not status then
       vim.notify("没有找到 lspsaga")
       return
@@ -22,7 +22,7 @@ return {
         enable = true,
         sign = true,
         sign_priority = 40,
-        virtual_text = true
+        virtual_text = true,
       },
       finder_definition_icon = "  ",
       finder_reference_icon = "  ",
@@ -35,29 +35,29 @@ return {
         -- quit = "q",
         quit = "<ESC>",
         scroll_down = "<C-f>",
-        scroll_up = "<C-b>"
+        scroll_up = "<C-b>",
       },
       code_action_keys = {
         -- quit = "q",
         quit = "<ESC>",
-        exec = "<CR>"
+        exec = "<CR>",
       },
       rename_action_keys = {
         -- quit = "<C-c>",
         quit = "<ESC>",
-        exec = "<CR>"
+        exec = "<CR>",
       },
       definition_preview_icon = "  ",
       border_style = "single",
       rename_prompt_prefix = "➤",
       rename_output_qflist = {
         enable = false,
-        auto_open_qflist = false
+        auto_open_qflist = false,
       },
       server_filetype_map = {},
       diagnostic_prefix_format = "%d. ",
       diagnostic_message_format = "%m %c",
-      highlight_prefix = false
+      highlight_prefix = false,
     })
-  end
+  end,
 }
