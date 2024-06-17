@@ -17,19 +17,12 @@ return {
       -- All formatter configurations are opt-in
       filetype = {
         dart = {
-          require("formatter.filetypes.dart").dart,
-          function(t)
-            t = t or {}
-            local args = {
-              util.escape_path(util.get_current_buffer_file_path()),
-              "--output show",
-            }
-            if t.line_length ~= nil then
-              table.insert(args, "--line-length " .. t.line_length)
-            end
+          function()
             return {
-              exe = "dart format",
-              args = args,
+              exe = "dart",
+              args = {
+                "format",
+              },
               stdin = true,
             }
           end,
