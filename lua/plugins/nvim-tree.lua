@@ -15,7 +15,7 @@ return {
       -- disable_netrw = true,
       -- 不显示 git 状态图标
       git = {
-        enable = false,
+        enable = true,
       },
       filters = {
         -- 隐藏 .文件
