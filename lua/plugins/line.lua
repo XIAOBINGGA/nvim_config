@@ -30,6 +30,7 @@ return {
   --   },
   -- },
   config = function()
+
     -- Eviline config for lualine
     -- Author: shadmansaleh
     -- Credit: glepnir

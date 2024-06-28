@@ -2,7 +2,7 @@ return {
   "mhartington/formatter.nvim",
   event = "VeryLazy",
   keys = {
-    { "<leader>ff", mode = { "n" }, "<cmd>Format<CR>", desc = "format files" },
+    -- { "<leader>ff", mode = { "n" }, "<cmd>Format<CR>", desc = "format files" },
   },
   config = function()
     -- Utilities for creating configurations

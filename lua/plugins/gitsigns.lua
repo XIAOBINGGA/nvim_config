@@ -1,11 +1,7 @@
 return {
-  { "tpope/vim-fugitive" },
   {
-    "sindrets/diffview.nvim",
+    "tpope/vim-fugitive",
     event = "VeryLazy",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
   },
   {
     "lewis6991/gitsigns.nvim",

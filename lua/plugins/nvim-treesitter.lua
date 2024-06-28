@@ -10,7 +10,7 @@ return {
     require("nvim-treesitter.install").compilers = { "zig" }
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
-        -- "vimdoc",
+        -- "vidoc",
         "c",
         "regex",
         "lua",
