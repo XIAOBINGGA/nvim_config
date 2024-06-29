@@ -46,7 +46,8 @@ map("n", "<C-Down>", ":resize +2<CR>", opt)
 map("n", "<C-Up>", ":resize -2<CR>", opt)
 
 -- lspsage term
-map("n", "<A-d>", '<cmd>Lspsaga term_toggle<CR>', opt)
+-- map("n", "<A-d>", '<cmd>Lspsaga term_toggle<CR>', opt)
+
 local PlugsKey = {}
 -- lsp
 PlugsKey.mapLsp = function(mapbuf)
@@ -57,7 +58,7 @@ PlugsKey.mapLsp = function(mapbuf)
   -- code_actions
   mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
   -- go xx
-  mapbuf("n", "<leader>gd", "<cmd>Lspsaga goto_definition()<CR>", opt)
+  mapbuf("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>", opt)
   -- gh
   mapbuf("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
   -- gr
