@@ -1,11 +1,16 @@
 return {
-  "sainnhe/everforest",
+  "catppuccin/nvim",
   lazy = false,
+  name = "catppuccin",
   priority = 1000,
   opts = {
-    background = "soft",
+    background = { -- :h background
+      light = "latte",
+      dark = "mocha",
+    },
   },
   config = function()
-    vim.cmd([[colorscheme everforest]])
+    vim.o.background = 'light'
+    vim.cmd([[colorscheme catppuccin]])
   end,
 }
