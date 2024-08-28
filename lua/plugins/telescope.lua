@@ -1,11 +1,11 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.6",
+  tag = "0.1.8",
   event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    -- 'nvim-telescope/telescope-file-browser.nvim',
-    -- 'nvim-telescope/telescope-project.nvim',
+    'nvim-telescope/telescope-file-browser.nvim',
+    'nvim-telescope/telescope-project.nvim',
   },
   keys = {
     {
@@ -68,7 +68,7 @@ return {
     --     -- mappings = require('keybings').telescopeList
     --   }
     -- })
-    -- pcall(telescope.load_extension, 'file_browser')
-    -- pcall(telescope.load_extension, "project")
+    pcall(telescope.load_extension, 'file_browser')
+    pcall(telescope.load_extension, "project")
   end,
 }
