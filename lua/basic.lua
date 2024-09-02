@@ -17,6 +17,7 @@ vim.wo.signcolumn = "yes"
 vim.o.tabstop = 2
 vim.bo.tabstop = 2
 vim.o.softtabstop = 2
+vim.g.editorconfig = false --neovim 默认集成了editorconfig
 vim.o.shiftround = true
 -- >> << 时移动长度
 vim.o.shiftwidth = 2
