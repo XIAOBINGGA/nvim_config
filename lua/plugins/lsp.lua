@@ -1,16 +1,19 @@
 local servers = {
   lua_ls = require("lsp.lua"),
   tsserver = require("lsp.ts"),
+  -- ts_ls = require("lsp.ts"),
   cssls = require("lsp.css"),
   html = require("lsp.html"),
   jsonls = require("lsp.json"),
   dartls = require("lsp.dart"),
   rescriptls = require("lsp.res"),
+  marksman = require("lsp.md"),
 }
 return {
   {
     "williamboman/mason.nvim",
     -- event = 'VeryLazy',
+    event = "BufEnter",
     config = function()
       -- code
       local mason = require("mason")
@@ -22,11 +25,12 @@ return {
     dependencies = {
       "neovim/nvim-lspconfig",
     },
+    event = "BufEnter",
     config = function()
       local lspconfig = require("lspconfig")
       local masonlspconfig = require("mason-lspconfig")
       masonlspconfig.setup({
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls" },
+        ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls", "marksman" },
       })
       local setup_handlers = {}
       for name, config in pairs(servers) do

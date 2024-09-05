@@ -13,20 +13,4 @@ return {
     post_hook = nil,
     performance_mode = false,
   },
-  keys = {
-    {
-      "<C-b>",
-      function()
-        require("neoscroll").scroll(-vim.wo.scroll, true, 250)
-      end,
-      desc = "scroll up",
-    },
-    {
-      "<C-d>",
-      function()
-        require("neoscroll").scroll(vim.wo.scroll, true, 250)
-      end,
-      desc = "scroll down",
-    },
-  },
 }
