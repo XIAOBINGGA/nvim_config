@@ -10,7 +10,7 @@ return {
     },
   },
   config = function()
-    vim.o.background = 'light'
+    -- vim.o.background = 'light'
     vim.cmd([[colorscheme catppuccin]])
   end,
 }
