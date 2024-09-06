@@ -1,5 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
+  enabled = require("tools").isenable(0),
   dependencies = {
     -- 补全核心插件
     "hrsh7th/cmp-cmdline",

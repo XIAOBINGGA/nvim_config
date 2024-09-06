@@ -1,6 +1,7 @@
 return {
   "mhartington/formatter.nvim",
   event = "VeryLazy",
+  enabled = require("tools").isenable(0),
   keys = {
     -- { "<leader>ff", mode = { "n" }, "<cmd>Format<CR>", desc = "format files" },
   },

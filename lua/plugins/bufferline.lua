@@ -1,6 +1,7 @@
 local symbols = require("tools").symbols
 return {
   "akinsho/bufferline.nvim",
+  enabled = require("tools").isenable(0),
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },

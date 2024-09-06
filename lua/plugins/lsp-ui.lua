@@ -1,5 +1,6 @@
 return {
   "nvimdev/lspsaga.nvim",
+  enabled = require("tools").isenable(0),
   config = function()
     require("lspsaga").setup({})
   end,

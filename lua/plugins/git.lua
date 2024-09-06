@@ -2,6 +2,7 @@ return {
   -- nvim v0.8.0
   {
     "kdheepak/lazygit.nvim",
+    enabled = require("tools").isenable(0),
     cmd = {
       "LazyGit",
       "LazyGitConfig",
@@ -21,6 +22,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
+    enabled = require("tools").isenable(0),
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
@@ -31,6 +33,7 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
+    enabled = require("tools").isenable(0),
     event = "VeryLazy",
     config = function()
       require("gitsigns").setup()

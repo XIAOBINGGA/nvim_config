@@ -1,6 +1,7 @@
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  enabled = require("tools").isenable(0),
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings

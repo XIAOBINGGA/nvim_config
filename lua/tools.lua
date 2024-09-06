@@ -61,4 +61,29 @@ tools.symbols = {
 tools.keymap = function(key)
   return key
 end
+
+tools.isenable = function(status)
+  --NOTE:盘点插件是否启用
+
+  -- status 0 两个环境, 1 vscode 2 neovide
+  if status == 0 then
+    if vim.g.vscode then
+      return false
+    end
+    if vim.g.neovide then
+      return false
+    end
+  end
+  if status == 1 then
+    if vim.g.vscode then
+      return false
+    end
+  end
+  if status == 2 then
+    if vim.g.neovide then
+      return false
+    end
+  end
+  return true
+end
 return tools

@@ -1,7 +1,7 @@
 return {
   "akinsho/flutter-tools.nvim",
   event = "VeryLazy",
-  enabled = true,
+  enabled = require("tools").isenable(0),
   ft = "dart",
   dependencies = {
     "nvim-lua/plenary.nvim",

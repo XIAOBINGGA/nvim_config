@@ -1,12 +1,8 @@
+local tools = require("tools")
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  enabled = function()
-    if vim.g.neovide then
-      return false
-    end
-    return true
-  end,
+  enabled = tools.isenable(1),
   opts = {
     presets = {
       bottom_search = true,

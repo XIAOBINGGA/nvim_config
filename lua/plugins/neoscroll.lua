@@ -1,12 +1,7 @@
 return {
   "karb94/neoscroll.nvim",
   event = "BufEnter",
-  enabled = function()
-    if vim.g.neovide then
-      return false
-    end
-    return true
-  end,
+  enabled = require("tools").isenable(0),
   main = "neoscroll",
   config = function()
     require("neoscroll").setup({

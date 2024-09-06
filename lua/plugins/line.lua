@@ -1,6 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  enabled = require("tools").isenable(0),
   dependencies = {
     "nvim-tree/nvim-web-devicons",
     "arkav/lualine-lsp-progress",

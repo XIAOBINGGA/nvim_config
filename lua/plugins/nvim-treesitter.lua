@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   event = "VeryLazy",
-  enabled = true,
+  enabled = require("tools").isenable(3),
   config = function()
     for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
       config.install_info.url = config.install_info.url:gsub("https://github.com/", "git@github.com:")

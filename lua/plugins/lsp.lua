@@ -14,6 +14,7 @@ return {
     "williamboman/mason.nvim",
     -- event = 'VeryLazy',
     event = "BufEnter",
+    enabled = require("tools").isenable(0),
     config = function()
       -- code
       local mason = require("mason")
@@ -26,6 +27,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     event = "BufEnter",
+    enabled = require("tools").isenable(0),
     config = function()
       local lspconfig = require("lspconfig")
       local masonlspconfig = require("mason-lspconfig")
