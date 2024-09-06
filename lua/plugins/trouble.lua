@@ -2,7 +2,7 @@ return {
   "folke/trouble.nvim",
   opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
-  enabled = require("tools").isenable(0),
+  enabled = require("tools").isenable(1),
   keys = {
     {
       "<leader>xx",

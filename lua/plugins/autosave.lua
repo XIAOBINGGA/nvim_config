@@ -1,7 +1,7 @@
 return {
   "pocco81/auto-save.nvim",
   event = "VeryLazy",
-  enabled = require("tools").isenable(0),
+  enabled = require("tools").isenable(1),
   keys = {
     { "<leader>n", "<Cmd>ASToggle<CR>", desc = "auto save" },
   },

@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
-  enabled = require("tools").isenable(0),
+  enabled = require("tools").isenable(1),
   config = function()
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1

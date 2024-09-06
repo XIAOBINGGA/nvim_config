@@ -3,7 +3,7 @@ return {
   lazy = false,
   name = "catppuccin",
   priority = 1000,
-  enabled = require("tools").isenable(0),
+  enabled = require("tools").isenable(1),
   opts = {
     background = { -- :h background
       light = "latte",

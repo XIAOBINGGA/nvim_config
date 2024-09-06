@@ -1,7 +1,7 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
-  enabled = require("tools").isenable(0),
+  enabled = require("tools").isenable(1),
   config = true,
   -- config = function ()
   -- end,
