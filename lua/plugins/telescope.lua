@@ -24,6 +24,14 @@ return {
       end,
       desc = "live grep",
     },
+    -- {
+    --   "<leader>tp",
+    --   mode = { "n" },
+    --   function()
+    --     require("telescope.builtin").project()
+    --   end,
+    --   desc = "project",
+    -- },
     {
       "<leader>tb",
       mode = { "n" },

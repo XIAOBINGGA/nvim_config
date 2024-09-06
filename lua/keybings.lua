@@ -8,7 +8,9 @@ local opt = {
 }
 -- 本地变量
 local map = vim.api.nvim_set_keymap
+-- 粘贴系统剪切板里的内容
 map("n", "<leader>vp", '"+P', opt)
+map("v", "<leader>vy", '"+y', opt)
 map("i", "jj", "<Esc>", opt)
 -- ; : 互换
 map("n", ";", ":", opt)

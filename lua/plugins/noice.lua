@@ -1,7 +1,12 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  enabled = false,
+  enabled = function()
+    if vim.g.neovide then
+      return false
+    end
+    return true
+  end,
   opts = {
     presets = {
       bottom_search = true,
@@ -20,5 +25,5 @@ return {
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
-   },
+  },
 }
