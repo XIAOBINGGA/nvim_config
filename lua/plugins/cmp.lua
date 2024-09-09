@@ -15,7 +15,7 @@ return {
     -- 添加图标
     "onsails/lspkind.nvim",
   },
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = "VeryLazy",
   config = function()
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
