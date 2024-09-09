@@ -1,7 +1,6 @@
 local servers = {
   lua_ls = require("lsp.lua"),
-  tsserver = require("lsp.ts"),
-  -- ts_ls = require("lsp.ts"),
+  ts_ls = require("lsp.ts"),
   cssls = require("lsp.css"),
   html = require("lsp.html"),
   jsonls = require("lsp.json"),
@@ -32,7 +31,7 @@ return {
       local lspconfig = require("lspconfig")
       local masonlspconfig = require("mason-lspconfig")
       masonlspconfig.setup({
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "html", "jsonls", "rescriptls", "marksman" },
+        ensure_installed = { "lua_ls", "cssls", "html", "jsonls", "rescriptls", "marksman" },
       })
       local setup_handlers = {}
       for name, config in pairs(servers) do
