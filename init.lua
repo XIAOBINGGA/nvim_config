@@ -1,4 +1,5 @@
-require("basic")
 require("keybings")
-require("manage")
+require("config.options")
+require("config.keymaps")
+require("config.lazy")
 require("neovide")

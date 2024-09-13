@@ -6,30 +6,6 @@ return {
     "nvim-tree/nvim-web-devicons",
     "arkav/lualine-lsp-progress",
   },
-  -- opts = {
-  --   extensions = { "nvim-tree" },
-  --   options = {
-  --     theme = "auto",
-  --     -- section_separators = { left = " ", right = "" },
-  --     -- component_separators = { left = " ", right = "" },
-  --     disabled_filetypes = { "undotree", "diff", "Outline" },
-  --   },
-  --   sections = {
-  --     lualine_b = { "branch", "diff" },
-  --     lualine_c = {
-  --       "filename",
-  --     },
-  --     lualine_x = {
-  --       "filesize",
-  --       {
-  --         "fileformat",
-  --         symbols = { unix = symbols.Unix, dos = symbols.Dos, mac = symbols.Mac },
-  --       },
-  --       "encoding",
-  --       "filetype",
-  --     },
-  --   },
-  -- },
   config = function()
     local status, lualine = pcall(require, "lualine")
     if not status then
@@ -43,7 +19,7 @@ return {
         -- https://github.com/ryanoasis/powerline-extra-symbols
         section_separators = { left = " ", right = " " },
       },
-      extensions = { "nvim-tree", "toggleterm" },
+      extensions = { "neo-tree", "toggleterm", "lazy" },
       sections = {
         lualine_c = {
           "filename",
@@ -65,4 +41,3 @@ return {
     })
   end,
 }
--- 如果找不到lualine 组件，就不继续执行
