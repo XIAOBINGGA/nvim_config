@@ -69,7 +69,4 @@ PlugsKey.mapLsp = function(mapbuf)
   mapbuf("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
   mapbuf("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 end
--- nvim-tree
-map("n", "<A-m>", ":Neotree<CR>", opt)
-map("n", "<leader>m", ":Neotree<CR>", opt)
 return PlugsKey

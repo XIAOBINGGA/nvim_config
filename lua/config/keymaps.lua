@@ -27,3 +27,8 @@ map("v", ">", ">gv", opt)
 -- 上下移动选中文本
 map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
+-- neo-tree
+map("n", "<A-m>", ":Neotree<CR>", opt)
+map("n", "<leader>mf", ":Neotree float<CR>", opt)
+map("n", "<leader>mb", ":Neotree bottom<CR>", opt)
+map("n", "<leader>mr", ":Neotree right<CR>", opt)

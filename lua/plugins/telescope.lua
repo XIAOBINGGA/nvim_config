@@ -5,8 +5,8 @@ return {
   enabled = require("tools").isenable(1),
   dependencies = {
     "nvim-lua/plenary.nvim",
-    'nvim-telescope/telescope-file-browser.nvim',
-    'nvim-telescope/telescope-project.nvim',
+    "nvim-telescope/telescope-file-browser.nvim",
+    "nvim-telescope/telescope-project.nvim",
   },
   keys = {
     {
@@ -25,14 +25,12 @@ return {
       end,
       desc = "live grep",
     },
-    -- {
-    --   "<leader>tp",
-    --   mode = { "n" },
-    --   function()
-    --     require("telescope.builtin").project()
-    --   end,
-    --   desc = "project",
-    -- },
+    {
+      "<leader>tp",
+      mode = { "n" },
+      "<cmd>Telescope project<CR>",
+      desc = "project",
+    },
     {
       "<leader>tb",
       mode = { "n" },
@@ -77,7 +75,7 @@ return {
     --     -- mappings = require('keybings').telescopeList
     --   }
     -- })
-    pcall(telescope.load_extension, 'file_browser')
+    pcall(telescope.load_extension, "file_browser")
     pcall(telescope.load_extension, "project")
   end,
 }
