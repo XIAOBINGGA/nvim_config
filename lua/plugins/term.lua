@@ -7,7 +7,7 @@ return {
   -- end,
   opts = {
     open_mapping = [[<c-\>]],
-    direction = "tab",
+    direction = "horizontal",
     start_in_insert = true,
   },
 }
