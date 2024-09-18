@@ -1,6 +1,7 @@
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  event = "VeryLazy",
   enabled = require("tools").isenable(1),
   opts = {
     -- your configuration comes here
