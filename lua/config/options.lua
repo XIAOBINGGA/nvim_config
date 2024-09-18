@@ -58,6 +58,8 @@ opt.virtualedit = "block" -- Allow cursor to move where there is no text in visu
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
-
+opt.autoread = true -- 自动加载被外部程序改变的文件
+vim.o.autoread = true
+vim.bo.autoread = true
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
