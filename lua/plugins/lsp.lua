@@ -11,7 +11,6 @@ local servers = {
 return {
   {
     "williamboman/mason.nvim",
-    -- event = 'VeryLazy',
     event = "BufEnter",
     enabled = require("tools").isenable(1),
     config = function()

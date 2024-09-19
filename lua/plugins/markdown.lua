@@ -1,7 +1,8 @@
 return {
   {
     "tpope/vim-markdown",
-    event = "VeryLazy",
+    event = "FileType",
+    ft = { "markdown" },
     config = function()
       vim.g.markdown_syntax_conceal = 0
       vim.g.markdown_fenced_languages = {
@@ -24,17 +25,16 @@ return {
   },
   {
     "yelog/marklive.nvim",
-    event = "VeryLazy",
+    event = "FileType",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = true,
-    ft = "markdown",
+    ft = { "markdown" },
     opts = {},
   },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "npm install",
-    event = "VeryLazy",
+    event = "FileType",
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
@@ -42,7 +42,8 @@ return {
   },
   {
     "dhruvasagar/vim-table-mode",
-    event = "VeryLazy",
+    event = "FileType",
+    ft = { "markdown" },
     config = function()
       vim.cmd(
         [[
@@ -58,14 +59,16 @@ return {
   }, --> table mode
   {
     "bullets-vim/bullets.vim",
-    event = "VeryLazy",
+    event = "FileType",
+    ft = { "markdown" },
     config = function()
       vim.g.bullets_enabled_file_types = { "markdown", "text", "gitcommit", "scratch" }
     end,
   }, --> list style
   {
     "tenxsoydev/vim-markdown-checkswitch",
-    event = "VeryLazy",
+    event = "FileType",
+    ft = { "markdown" },
     config = function()
       vim.g.md_checkswitch_style = "cycle"
     end,

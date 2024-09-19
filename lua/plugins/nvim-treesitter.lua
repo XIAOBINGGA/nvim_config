@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = "VeryLazy",
+  event = "BufEnter",
   enabled = require("tools").isenable(3),
   config = function()
     for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do

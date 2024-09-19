@@ -2,6 +2,8 @@ return {
   -- nvim v0.8.0
   {
     "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
+    lazy = true,
     enabled = require("tools").isenable(1),
     cmd = {
       "LazyGit",
@@ -24,6 +26,7 @@ return {
     "NeogitOrg/neogit",
     enabled = require("tools").isenable(1),
     event = "VeryLazy",
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
@@ -35,6 +38,7 @@ return {
     "lewis6991/gitsigns.nvim",
     enabled = require("tools").isenable(1),
     event = "VeryLazy",
+    lazy = true,
     config = function()
       require("gitsigns").setup()
     end,

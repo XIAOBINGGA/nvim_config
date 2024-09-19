@@ -28,7 +28,7 @@ return {
     -- 添加图标
     "onsails/lspkind.nvim",
   },
-  event = "VeryLazy",
+  event = "BufEnter",
   config = function()
     local lspkind = require("lspkind")
     local cmp = require("cmp")
