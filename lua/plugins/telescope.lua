@@ -56,8 +56,17 @@ return {
     end
     telescope.setup({
       defaults = {
-        layout_config = {
-          vertical = { width = 0.2 },
+        layout_strategy = "vertical",
+        layout_config = { height = 0.95 },
+      },
+      pickers = {
+        -- 内置 pickers 配置
+        find_files = {
+          -- 查找文件换皮肤，支持的参数有： dropdown, cursor, ivy
+          theme = "ivy",
+        },
+        live_grep = {
+          theme = "ivy",
         },
       },
     })
