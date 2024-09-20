@@ -54,27 +54,13 @@ return {
       vim.notify("没有找到 telescope")
       return
     end
-    -- telescope.setup({
-    --   extensions = {
-    --     file_browser = {
-    --       -- theme = "ivy",
-    --       hijack_netrw = true,
-    --     },
-    --     project = {
-    --       base_dirs = {
-    --         '~/src',
-    --       },
-    --       hidden_files = true, -- default: false
-    --       theme = "dropdown",
-    --       order_by = "recent",
-    --       search_by = {"path", "title"},
-    --       sync_with_nvim_tree = false, -- default false
-    --     },
-    --   },
-    --   defaults = {
-    --     -- mappings = require('keybings').telescopeList
-    --   }
-    -- })
+    telescope.setup({
+      defaults = {
+        layout_config = {
+          vertical = { width = 0.2 },
+        },
+      },
+    })
     pcall(telescope.load_extension, "file_browser")
     pcall(telescope.load_extension, "project")
   end,

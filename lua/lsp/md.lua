@@ -12,7 +12,7 @@ local opts = {
       vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
     -- 绑定快捷键
-    require("keybings").mapLsp(buf_set_keymap)
+    require("config.keymaps").mapLsp(buf_set_keymap)
   end,
 }
 

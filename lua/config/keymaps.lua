@@ -32,3 +32,44 @@ map("n", "<A-m>l", ":Neotree left<CR>", opt)
 map("n", "<leader>mf", ":Neotree float<CR>", opt)
 map("n", "<leader>mb", ":Neotree bottom<CR>", opt)
 map("n", "<leader>mr", ":Neotree right<CR>", opt)
+
+-- 取消 s 默认功能
+map("n", "s", "", opt)
+map("n", "<leader>sv", ":vsp<CR>", opt)
+map("n", "<leader>sh", ":sp<CR>", opt)
+-- 关闭当前
+map("n", "<leader>sc", "<C-w>c", opt)
+-- 关闭其他
+map("n", "<leader>so", "<C-w>o", opt) -- close others
+-- alt + hjkl  窗口之间跳转
+map("n", "<A-h>", "<C-w>h", opt)
+map("n", "<A-j>", "<C-w>j", opt)
+map("n", "<A-k>", "<C-w>k", opt)
+map("n", "<A-l>", "<C-w>l", opt)
+-- 左右比例控制
+map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Down>", ":resize +2<CR>", opt)
+map("n", "<C-Up>", ":resize -2<CR>", opt)
+
+local PlugsKey = {}
+-- lsp
+PlugsKey.mapLsp = function(mapbuf)
+  -- format
+  mapbuf("n", "<leader>ff", "<cmd>Format<CR>", opt)
+  -- rename
+  mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+  -- code_actions
+  mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+  -- go xx
+  mapbuf("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>", opt)
+  -- gh
+  mapbuf("n", "<leader>gh", "<cmd>Lspsaga hover_doc<CR>", opt)
+  -- gr
+  mapbuf("n", "<leader>gr", "<cmd>Lspsaga finder<CR>", opt)
+  -- diagnostic
+  mapbuf("n", "<leader>gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+  mapbuf("n", "<leader>gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", "<leader>gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
+end
+return PlugsKey
