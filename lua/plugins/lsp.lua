@@ -7,6 +7,7 @@ local servers = {
   dartls = require("lsp.dart"),
   rescriptls = require("lsp.res"),
   marksman = require("lsp.md"),
+  tailwindcss = require("lsp.tailwindcss"),
 }
 return {
   {
@@ -30,7 +31,7 @@ return {
       local lspconfig = require("lspconfig")
       local masonlspconfig = require("mason-lspconfig")
       masonlspconfig.setup({
-        ensure_installed = { "ts_ls", "lua_ls", "cssls", "html", "jsonls", "rescriptls", "marksman" },
+        ensure_installed = { "ts_ls", "lua_ls", "cssls", "html", "jsonls", "rescriptls", "marksman", "tailwindcss" },
       })
       local setup_handlers = {}
       for name, config in pairs(servers) do
