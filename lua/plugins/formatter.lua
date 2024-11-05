@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   enabled = require("tools").isenable(1),
   rocks = {
-    enabled = false
+    enabled = false,
   },
   keys = {
     -- { "<leader>ff", mode = { "n" }, "<cmd>Format<CR>", desc = "format files" },
@@ -15,50 +15,18 @@ return {
     -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
     require("formatter").setup({
       -- Enable or disable logging
-      logging = true,
+      logging = false,
       -- Set the log level
       log_level = vim.log.levels.WARN,
       -- All formatter configurations are opt-in
       filetype = {
         dart = {
-          function()
-            return {
-              exe = "dart",
-              args = {
-                "format",
-              },
-              stdin = true,
-            }
-          end,
+          require("formatter.filetypes.dart").dartformat
         },
         -- Formatter configurations for filetype "lua" go here
         -- and will be executed in order
         lua = {
-          -- "formatter.filetypes.lua" defines default configurations for the
-          -- "lua" filetype
           require("formatter.filetypes.lua").stylua,
-
-          -- You can also define your own configuration
-          function()
-            -- Supports conditional formatting
-            if util.get_current_buffer_file_name() == "special.lua" then
-              return nil
-            end
-
-            -- Full specification of configurations is down below and in Vim help
-            -- files
-            return {
-              exe = "stylua",
-              args = {
-                "--search-parent-directories",
-                "--stdin-filepath",
-                util.escape_path(util.get_current_buffer_file_path()),
-                "--",
-                "-",
-              },
-              stdin = true,
-            }
-          end,
         },
         less = {
           function(parser)
@@ -87,87 +55,14 @@ return {
             }
           end,
         },
-
         javascriptreact = {
-          function(parser)
-            if not parser then
-              return {
-                exe = "prettier",
-                args = {
-                  "--stdin-filepath",
-                  util.escape_path(util.get_current_buffer_file_path()),
-                },
-                stdin = true,
-                try_node_modules = true,
-              }
-            end
-
-            return {
-              exe = "prettier",
-              args = {
-                "--stdin-filepath",
-                util.escape_path(util.get_current_buffer_file_path()),
-                "--parser",
-                parser,
-              },
-              stdin = true,
-              try_node_modules = true,
-            }
-          end,
+          require("formatter.filetypes.javascriptreact").prettier,
         },
         typescript = {
-          function(parser)
-            if not parser then
-              return {
-                exe = "prettier",
-                args = {
-                  "--stdin-filepath",
-                  util.escape_path(util.get_current_buffer_file_path()),
-                },
-                stdin = true,
-                try_node_modules = true,
-              }
-            end
-
-            return {
-              exe = "prettier",
-              args = {
-                "--stdin-filepath",
-                util.escape_path(util.get_current_buffer_file_path()),
-                "--parser",
-                parser,
-              },
-              stdin = true,
-              try_node_modules = true,
-            }
-          end,
+          require("formatter.filetypes.typescript").prettier,
         },
         javascript = {
-          function(parser)
-            if not parser then
-              return {
-                exe = "prettier",
-                args = {
-                  "--stdin-filepath",
-                  util.escape_path(util.get_current_buffer_file_path()),
-                },
-                stdin = true,
-                try_node_modules = true,
-              }
-            end
-
-            return {
-              exe = "prettier",
-              args = {
-                "--stdin-filepath",
-                util.escape_path(util.get_current_buffer_file_path()),
-                "--parser",
-                parser,
-              },
-              stdin = true,
-              try_node_modules = true,
-            }
-          end,
+          require("formatter.filetypes.javascript").prettier,
         },
         -- Use the special "*" filetype for defining formatter configurations on
         -- any filetype
