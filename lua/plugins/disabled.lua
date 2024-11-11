@@ -1,8 +1,5 @@
 return {
-
-  { "nvim-treesitter/nvim-treesitter", enabled = false },
-  {
-    "nvim-lualine/lualine.nvim",
-    enabled = false,
-  },
+  { "nvim-treesitter/nvim-treesitter", enabled = true },
+  { "nvim-lualine/lualine.nvim", enabled = true },
+  { "nvim-treesitter-textobjects", enabled = true },
 }
