@@ -4,8 +4,9 @@ return {
   rocks = {
     enabled = false,
   },
+  enabled = false,
   keys = {
-    { "<leader>fp", "<cmd>Format<cr>", desc = "format files" },
+    -- { "<leader>fp", "<cmd>Format<cr>", desc = "format files" },
   },
   config = function()
     -- Utilities for creating configurations
