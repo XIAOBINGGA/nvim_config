@@ -3,12 +3,6 @@
 -- Add any additional options here
 
 -- vim.g.autoformat = false
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
--- vim.g.neovide_cursor_vfx_mode = "torpedo"
-vim.g.neovide_cursor_vfx_particle_density = 100.0
-vim.g.neovide_floating_shadow = false
-vim.g.neovide_input_ime = true
-vim.g.neovide_hide_mouse_when_typing = true
 -- vim.o.guifont = "0xProto Nerd Font:h14" -- text below applies for VimScript
 
 local opt = vim.opt
