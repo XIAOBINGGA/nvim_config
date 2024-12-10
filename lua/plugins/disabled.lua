@@ -1,3 +1,3 @@
 return {
-  { "telescope-fzf-native.nvim", enabled = false },
+  { "telescope-fzf-native.nvim", enabled = true },
 }
