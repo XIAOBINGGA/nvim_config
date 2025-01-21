@@ -1,12 +1,9 @@
 return {
   "mhartington/formatter.nvim",
   event = "VeryLazy",
-  rocks = {
-    enabled = false,
-  },
   enabled = false,
   keys = {
-    -- { "<leader>fp", "<cmd>Format<cr>", desc = "format files" },
+    { "<leader>pf", "<cmd>Format<cr>", desc = "format files" },
   },
   config = function()
     -- Utilities for creating configurations
@@ -15,7 +12,7 @@ return {
     -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
     require("formatter").setup({
       -- Enable or disable logging
-      logging = false,
+      logging = true,
       -- Set the log level
       log_level = vim.log.levels.WARN,
       -- All formatter configurations are opt-in
