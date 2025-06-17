@@ -8,7 +8,3 @@ local opt = {
   noremap = true,
   silent = true,
 }
-
--- ; : 互换
-map("n", ";", ":", opt)
-map("n", ":", ";", opt)
