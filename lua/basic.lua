@@ -6,4 +6,4 @@ opt.autowrite = true -- Enable auto write
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboar
 
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
-opt.timeoutlen = 500
+opt.timeoutlen = 1000
