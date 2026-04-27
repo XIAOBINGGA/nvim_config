@@ -74,14 +74,6 @@ vim.keymap.set("n", "<leader>o", [[<cmd>lua require('vscode').action('workbench.
     vim.keymap.set("n", "<leader>/", [[<cmd>lua require('vscode').action('workbench.action.findInFiles')<cr>]])
     vim.keymap.set("n", "<leader>ss", [[<cmd>lua require('vscode').action('workbench.action.gotoSymbol')<cr>]])
     -- 跳转到定义（编程核心操作）
-    vim.keymap.set("n", "<leader>gd", [[<cmd>lua require('vscode').action('editor.action.goToDeclaration')<cr>]])
-    -- 查看定义预览（不跳转文件）
-    vim.keymap.set("n", "<leader>gp", [[<cmd>lua require('vscode').action('editor.action.peekDefinition')<cr>]])
-    -- 查找引用
-    vim.keymap.set("n", "<leader>gr", [[<cmd>lua require('vscode').action('editor.action.findReferences')<cr>]])
-    -- 全局替换（搭配查找更实用）
-    vim.keymap.set("n", "<leader>r", [[<cmd>lua require('vscode').action('workbench.action.replaceInFiles')<cr>]])
-
     -- 窗口/面板操作
     vim.keymap.set("n", "<leader>b", [[<cmd>lua require('vscode').action('workbench.action.toggleSidebarVisibility')<cr>]])
     vim.keymap.set("n", "<leader>e", [[<cmd>lua require('vscode').action('workbench.view.explorer')<cr>]])
@@ -98,7 +90,7 @@ vim.keymap.set("n", "<leader>o", [[<cmd>lua require('vscode').action('workbench.
 
     -- 编辑操作
     -- 格式化文档
-    vim.keymap.set("n", "<leader>f", [[<cmd>lua require('vscode').action('editor.action.formatDocument')<cr>]])
+    -- vim.keymap.set("n", "<leader>f", [[<cmd>lua require('vscode').action('editor.action.formatDocument')<cr>]])
     -- 撤销/重做
     vim.keymap.set("n", "u", "<Cmd>call VSCodeNotify('undo')<CR>")
     vim.keymap.set("n", "<C-r>", "<Cmd>call VSCodeNotify('redo')<CR>")
@@ -112,31 +104,4 @@ vim.keymap.set("n", "<leader>o", [[<cmd>lua require('vscode').action('workbench.
     -- 终端/模式
     vim.keymap.set("n", "<leader>z", [[<cmd>lua require('vscode').action('workbench.action.toggleZenMode')<cr>]])
     vim.keymap.set("n", "<leader>t", [[<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<cr>]])
-    -- 切换终端（多终端时）
-    vim.keymap.set("n", "<leader>tn", [[<cmd>lua require('vscode').action('workbench.action.terminal.focusNext')<cr>]])
-    vim.keymap.set("n", "<leader>tp", [[<cmd>lua require('vscode').action('workbench.action.terminal.focusPrevious')<cr>]])
-
-    -- Git 操作（VS Code 内置 Git）
-    -- 打开 Git 面板
-    vim.keymap.set("n", "<leader>g", [[<cmd>lua require('vscode').action('workbench.view.scm')<cr>]])
-    -- Git 提交
-    vim.keymap.set("n", "<leader>gc", [[<cmd>lua require('vscode').action('git.commit')<cr>]])
-    -- Git 拉取
-    vim.keymap.set("n", "<leader>gl", [[<cmd>lua require('vscode').action('git.pull')<cr>]])
-    -- Git 推送
-    vim.keymap.set("n", "<leader>gp", [[<cmd>lua require('vscode').action('git.push')<cr>]])
-    -- 解决 Git 冲突
-    vim.keymap.set("n", "<leader>gm", [[<cmd>lua require('vscode').action('git.mergeConflicts.openNextConflict')<cr>]])
-
-    -- 调试操作（开发核心）
-    -- 启动/停止调试
-    vim.keymap.set("n", "<leader>dd", [[<cmd>lua require('vscode').action('workbench.action.debug.start')<cr>]])
-    vim.keymap.set("n", "<leader>dc", [[<cmd>lua require('vscode').action('workbench.action.debug.stop')<cr>]])
-    -- 断点操作（切换/清除所有）
-    vim.keymap.set("n", "<leader>db", [[<cmd>lua require('vscode').action('editor.action.toggleBreakpoint')<cr>]])
-    vim.keymap.set("n", "<leader>dC", [[<cmd>lua require('vscode').action('workbench.action.debug.removeAllBreakpoints')<cr>]])
-    -- 调试步进（下一步/步入/步出）
-    vim.keymap.set("n", "<leader>dn", [[<cmd>lua require('vscode').action('workbench.action.debug.stepOver')<cr>]])
-    vim.keymap.set("n", "<leader>di", [[<cmd>lua require('vscode').action('workbench.action.debug.stepInto')<cr>]])
-    vim.keymap.set("n", "<leader>do", [[<cmd>lua require('vscode').action('workbench.action.debug.stepOut')<cr>]])
-    
+    vim.keymap.set("n", "<leader>fb", [[<cmd>lua require('vscode').action('workbench.action.showAllEditors')<cr>]])

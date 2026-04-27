@@ -25,4 +25,4 @@ vim.opt.indentexpr = ""      -- 清空缩进表达式（彻底禁用自动缩进
 vim.opt.formatlistpat = ""         -- 关闭列表格式化
 vim.opt.formatoptions = ""         -- 彻底禁用 Neovim 自动格式化
 vim.opt.hlsearch = false    -- 关闭搜索结果高亮（核心）
-vim.opt.incsearch = false   -- 关闭实时增量搜索（可选，如需保留实时搜索可设为 true）
+-- vim.opt.incsearch = false   -- 关闭实时增量搜索（可选，如需保留实时搜索可设为 true）
