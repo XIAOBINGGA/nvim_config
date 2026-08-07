@@ -49,6 +49,7 @@ return {
   -- 拆分/合并
   {
     "nvim-mini/mini.splitjoin",
+    vscode = true,
     event = "VeryLazy",
     opts = {
       mappings = {
@@ -63,14 +64,15 @@ return {
   { "tpope/vim-repeat", event = "VeryLazy" },
 
   -- 括号映射增强
-  { "tpope/vim-unimpaired", event = "VeryLazy" },
+  { "tpope/vim-unimpaired", vscode = true, event = "VeryLazy" },
 
   -- 自动检测缩进
-  { "tpope/vim-sleuth", event = "VeryLazy" },
+  { "tpope/vim-sleuth", vscode = true, event = "VeryLazy" },
 
   -- 快速对齐
   {
     "junegunn/vim-easy-align",
+    vscode = true,
     event = "VeryLazy",
     keys = {
       { "ga", "<Plug>(EasyAlign)", mode = { "n", "x" }, desc = "Easy Align" },
