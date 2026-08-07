@@ -27,3 +27,11 @@ opt.shellxquote = ""
 -- opt.cinkeys = "0{,0},0),0],0#,!^F,o,O,e"
 -- opt.indentkeys = "0{,0},0),0],0#,!^F,o,O,e"
 vim.g.background = "light"
+
+-- 搜索增强
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = true
+opt.incsearch = true
+opt.inccommand = "split"
+
