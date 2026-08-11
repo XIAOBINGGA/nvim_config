@@ -23,7 +23,6 @@ return {
   { "folke/twilight.nvim", enabled = false },
   { "folke/zen-mode.nvim", enabled = false },
   { "folke/persistence.nvim", enabled = false },
-  { "folke/snacks.nvim", enabled = false }, -- mini.dashboard/picker/explorer 等
   { "folke/trouble.nvim", enabled = false }, -- 诊断列表窗口
   { "ibhagwan/fzf-lua", enabled = false }, -- 模糊查找 (VSCode 提供)
   { "MagicDuck/grug-far.nvim", enabled = false }, -- 搜索替换窗口
@@ -31,4 +30,19 @@ return {
   -- 禁用 lint & format (由 VSCode 处理)
   { "mfussenegger/nvim-lint", enabled = false },
   { "stevearc/conform.nvim", enabled = false },
+  -- snacks.nvim 是 LazyVim 依赖项不能禁用，但关闭其中的 VSCode 无用功能
+  {
+    "folke/snacks.nvim",
+    opts = {
+      bigfile = { enabled = false },
+      dashboard = { enabled = false },
+      indent = { enabled = false },
+      input = { enabled = false },
+      notifier = { enabled = false },
+      picker = { enabled = false },
+      quickfile = { enabled = false },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = false },
+    },
+  },
 }
