@@ -38,6 +38,7 @@ va("workbench.action.focusBelowGroup", { "<leader>hj", "焦点→下组" })
 va("workbench.action.closeOtherEditors", { "<leader>co", "关闭其他标签" })
 va("workbench.action.closeEditorsInGroup", { "<leader>cg", "关闭组内标签" })
 va("workbench.action.reopenClosedEditor", { "<leader>ur", "恢复关闭的标签" })
+va("workbench.action.showAllEditors", { "<leader>bl", "缓冲区列表" })
 
 -- ── 导航 ────────────────────────────────────────
 va("workbench.action.navigateBack", { "<leader>ob", "后退" })
