@@ -22,6 +22,12 @@ return {
   { "folke/edgy.nvim", enabled = false },
   { "folke/twilight.nvim", enabled = false },
   { "folke/zen-mode.nvim", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
+  { "folke/snacks.nvim", enabled = false }, -- mini.dashboard/picker/explorer 等
+  { "folke/trouble.nvim", enabled = false }, -- 诊断列表窗口
+  { "ibhagwan/fzf-lua", enabled = false }, -- 模糊查找 (VSCode 提供)
+  { "MagicDuck/grug-far.nvim", enabled = false }, -- 搜索替换窗口
+  { "lewis6991/gitsigns.nvim", enabled = false }, -- Git 标记 (VSCode 内置)
   -- 禁用 lint & format (由 VSCode 处理)
   { "mfussenegger/nvim-lint", enabled = false },
   { "stevearc/conform.nvim", enabled = false },
