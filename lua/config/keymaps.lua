@@ -19,7 +19,8 @@ va("actions.find", { "<leader>fs", "文件内搜索" })
 va("editor.action.startFindReplaceAction", { "<leader>fh", "文件内替换" })
 va("workbench.action.gotoSymbol", { "<leader>fb", "文件符号跳转" })
 va("workbench.action.showAllSymbols", { "<leader>fB", "全局符号跳转" })
-va("workbench.action.gotoLine", { "<leader>fl", "跳转到行" })
+-- 跳转到行用 nvim 命令行 ":<行号>"，不映射 gotoLine（该命令有 nvim_win_set_cursor 越界 bug）
+vim.keymap.set("n", "<leader>fl", ":", { desc = "跳转到行" })
 va("workbench.action.showCommands", { "<leader>fp", "命令面板" })
 va("workbench.action.openRecent", { "<leader>fr", "最近文件" })
 
