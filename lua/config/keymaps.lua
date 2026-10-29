@@ -45,6 +45,11 @@ va("workbench.action.showAllEditors", { "<leader>bl", "缓冲区列表" })
 va("workbench.action.navigateBack", { "<leader>ob", "后退" })
 va("workbench.action.navigateForward", { "<leader>of", "前进" })
 
+-- ── 行内移动 ────────────────────────────────────
+map({ "n", "x", "o" }, "<leader>H", "^", { desc = "行首(第一个字符)" })
+map({ "n", "x", "o" }, "<leader>L", "$", { desc = "行尾(最后一个字符)" })
+map({ "n", "x", "o" }, "<leader>-", "g_", { desc = "行尾(最后一个非空白字符)" })
+
 -- ── 代码操作 (LSP 由 VSCode 提供) ──────────────
 va("editor.action.revealDefinition", { "gd", "转到定义" })
 va("editor.action.peekDefinition", { "gp", "预览定义" })
