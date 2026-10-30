@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  -- local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  -- local lazyrepo = "git@github.com:folke/lazy.nvim.git"
   local lazyrepo = "git@github.com:folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
@@ -40,7 +40,12 @@ require("lazy").setup({
     -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
     -- then set the below to false. This should work, but is NOT supported and will
     -- increase downloads a lot.
-    filter = true,
+    filter = false,
+    -- 浅克隆:只下载最新版本,不拉取历史,大幅减少安装/更新时的下载量
+    -- 代价:无法 :Lazy log 查看更新日志、无法回滚插件版本
+    depth = 1,
+    -- 网络 > 慢,延长单次 git 操作超时(默认 60 秒)
+    timeout = 600,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
