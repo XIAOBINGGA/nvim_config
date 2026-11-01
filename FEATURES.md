@@ -352,6 +352,70 @@ nvim-lspconfig 读取说明书:cmd = rescript-language-server --stdio
 3. **blink.cmp 纯 Lua fuzzy**(`lua/plugins/blink.lua`):因网络无法下载 GitHub Releases 二进制
 4. **前端语言支持**(`lua/plugins/frontend.lua`):HTML / CSS / SCSS / LESS 的 LSP(html-lsp、css-ls、emmet)+ 相关 treesitter parser;TS/React/Tailwind/Flutter 由 extras 提供
 5. **lazy.nvim 安装调优**(`lua/config/lazy.lua`):SSH 拉取、浅克隆 `depth=1`、git 超时 600 秒
+6. **ReScript 支持**(`lua/plugins/rescript.lua`):LSP + 手动安装的 treesitter parser,详见下方「ReScript 环境搭建」
+
+## ReScript 环境搭建(`lua/plugins/rescript.lua`)
+
+配置分三块:filetype 识别、LSP(`rescriptls`)、treesitter parser。前两者配置文件里已有,parser 因网络问题需手动安装。
+
+### 1. LSP:npm 安装(Mason registry 里没有)
+
+```sh
+npm i -g @rescript/language-server   # 提供 rescript-language-server
+npm i -g rescript                    # 可选:编译器,LSP 增量类型检查不依赖它
+```
+
+注意:**编译器版本要和项目的 `rescript.json` 对齐**,建议直接在项目里 `npm i -D rescript`。
+
+### 2. LSP 配置的坑:settings 必须写对层级
+
+服务器从 `settings.rescript.settings` 读配置,写在 `init_options` 里**不生效**(会一直弹 "Start a build?" 询问):
+
+```lua
+rescriptls = {
+  mason = false,
+  settings = {
+    rescript = {
+      settings = {
+        askToStartBuild = false,
+        inlayHints = { enable = true },
+        -- ...
+      },
+    },
+  },
+},
+```
+
+LSP 只在打开含 `rescript.json` 的项目里的 `.res` 文件时才启动(root_markers 决定),单开孤立 `.res` 文件功能受限,这是正常行为。
+
+### 3. treesitter parser:手动安装(直连 GitHub 不通,TSInstall 会卡死)
+
+```sh
+# a. 通过镜像 clone grammar 仓库(gh-proxy 失效时可换 ghfast.top 等)
+git clone --depth 1 https://gh-proxy.com/https://github.com/rescript-lang/tree-sitter-rescript
+cd tree-sitter-rescript
+
+# b. 编译 parser(Neovim 自带 cc,无需额外依赖)
+cc -O2 -fPIC -I./src -shared src/parser.c src/scanner.c -o rescript.so
+
+# c. 安装到用户级目录(site/ 不会被插件更新覆盖)
+cp rescript.so ~/.local/share/nvim/site/parser/rescript.so
+mkdir -p ~/.local/share/nvim/site/queries/rescript
+cp queries/highlights.scm queries/injections.scm queries/locals.scm \
+  ~/.local/share/nvim/site/queries/rescript/
+```
+
+query 文件 grammar 仓库自带,不用等 nvim-treesitter 下载。
+
+### 4. 验证
+
+```vim
+" 打开项目里的 .res 文件后:
+:checkhealth vim.lsp          " Active Clients 里应出现 rescriptls
+" 注意:Neovim 0.11+ 已移除 :LspInfo 命令
+```
+
+高亮是否生效可 headless 验证:`parser ok` / `hl active` 均为 true 即可(见 git 历史)。
 
 ## 常用快捷键速查(`<leader>` 默认是空格)
 

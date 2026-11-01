@@ -21,10 +21,17 @@ return {
       servers = {
         rescriptls = {
           mason = false, -- registry 没有,用 npm 自己装的
+          -- 注意:该服务器从 settings.rescript.settings 读取配置,
+          -- 写在 init_options 里不生效(会弹 "Start a build?" 询问)
           settings = {
             rescript = {
               settings = {
+                askToStartBuild = false,
+                allowBuiltInFormatter = true,
+                codeLens = true,
                 inlayHints = { enable = true },
+                incrementalTypechecking = { enable = true, acrossFiles = true },
+                cache = { projectConfig = { enabled = true } },
               },
             },
           },
@@ -32,6 +39,6 @@ return {
       },
     },
   },
-  -- rescript 的 treesitter parser 无法自动安装(启动时联网下载会卡死,见 FEATURES.md 网络说明)
-  -- 需手动安装,见仓库 README 或手动 clone 编译
+-- rescript 的 treesitter parser 无法自动安装(GitHub 直连不通,TSInstall 会卡死)
+-- 手动安装步骤见 FEATURES.md「ReScript 环境搭建」第 3 节
 }

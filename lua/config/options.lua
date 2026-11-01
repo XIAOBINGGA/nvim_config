@@ -2,7 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- vim.g.autoformat = false
+-- 关闭保存时自动格式化（所有项目），改为手动 <leader>lf 格式化
+vim.g.autoformat = false
 -- vim.o.guifont = "0xProto Nerd Font:h14" -- text below applies for VimScript
 
 local opt = vim.opt
