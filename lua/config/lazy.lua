@@ -31,6 +31,8 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
+  -- 同时进行的 git 任务数(默认无穷大),慢网络下调低避免连接被重置
+  concurrency = 2,
   git = {
     -- defaults for the `Lazy log` command
     -- log = { "-10" }, -- show the last 10 commits
@@ -41,11 +43,10 @@ require("lazy").setup({
     -- then set the below to false. This should work, but is NOT supported and will
     -- increase downloads a lot.
     filter = false,
-    -- 浅克隆:只下载最新版本,不拉取历史,大幅减少安装/更新时的下载量
-    -- 代价:无法 :Lazy log 查看更新日志、无法回滚插件版本
-    depth = 1,
+    -- 浅克隆已去掉:depth=1 会导致 lazy 无法检出 tag 版本,停留在 main 开发分支
+    -- (blink.cmp 因此翻过车),且无法 :Lazy log 查看更新日志、无法回滚插件版本
     -- 网络 > 慢,延长单次 git 操作超时(默认 60 秒)
-    timeout = 600,
+    timeout = 1200,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
