@@ -5,17 +5,9 @@ return {
   opts = function(_, opts)
     opts.window = opts.window or {}
 
-    -- 浮动窗口(居中,类似 fzf 的样子)
-    opts.window.position = "float"
-    opts.window.float = {
-      source = "last", -- 重新打开时回到上次目录
-      relative = "editor",
-      border = "rounded",
-      width = 0.6, -- 屏宽的 60%
-      height = 0.7, -- 屏高的 70%
-      col = 0.5, -- 水平居中
-      row = 0.5, -- 垂直居中
-    }
+    -- 侧边栏(左侧)
+    opts.window.position = "left"
+    opts.window.width = 30
 
     -- 如果想改成上下分栏,注释掉上面的 float 相关,改用:
     -- opts.window.position = "top"

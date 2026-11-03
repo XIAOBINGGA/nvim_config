@@ -9,7 +9,8 @@ return {
   },
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
+    -- 只在打开 dart 文件时才加载,避免每次启动都拉起 flutter 相关进程拖慢速度
+    ft = "dart",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
