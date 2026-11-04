@@ -15,8 +15,11 @@ return {
       "nvim-lua/plenary.nvim",
     },
     opts = {
-      flutter_path = nil, -- 默认从 PATH 查找 flutter,也可写死如 "/opt/flutter/bin/flutter"
-      flutter_lookup_cmd = "flutter devices",
+      -- 注意: 不要设置 flutter_lookup_cmd!plenary 会直接 spawn "flutter",
+      -- Windows 上 libuv 无法执行无扩展名的批处理包装器而报 ENOENT,
+      -- 该错误会在 dart FileType 事件中抛出并中断后续 autocmd(导致 treesitter 高亮不启动)。
+      -- 不设置时走 exepath("flutter") 默认路径,能正确解析到 flutter.bat
+      flutter_path = nil, -- 默认从 PATH 查找 flutter,也可写死如 "C:/flutter/bin/flutter.bat"
       fvm = false, -- 如用 fvm 管理版本则改为 true
       lsp = {
         -- lsp.color 已废弃,document colors 改由其他插件(如 snacks.nvim)提供
