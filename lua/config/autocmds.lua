@@ -38,6 +38,23 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   group = "AutoSave",
 })
 
+-- 外部修改文件后自动 reload
+vim.api.nvim_create_augroup("AutoRead", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = "AutoRead",
+  pattern = "*",
+  command = "checktime", -- 检查并读入外部改动(配合 autoread 生效)
+})
+
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  group = "AutoRead",
+  pattern = "*",
+  callback = function(args)
+    vim.notify("已重新加载被外部修改的文件: " .. vim.fn.fnamemodify(args.file, ":t"), vim.log.levels.INFO)
+  end,
+})
+
 -- Python/Go 等语言使用 4 空格缩进
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "python", "go" },

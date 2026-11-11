@@ -49,4 +49,7 @@ opt.undofile = true -- 持久化撤销历史
 opt.splitbelow = true -- 水平分屏在下方打开
 opt.splitright = true -- 垂直分屏在右侧打开
 opt.mouse = "a" -- 启用鼠标
+
+-- 文件被外部修改时自动重新加载
+opt.autoread = true -- 文件在外部被改动后自动读入
 opt.clipboard = "unnamedplus" -- 与系统剪贴板共享
